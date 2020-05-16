@@ -1,0 +1,3 @@
+<h1>本当に退会しますか？</h1>
+<%=link_to "退会しない", edit_member_path(current_member.id)%>
+<%=link_to "退会する", member_status_edit_path, method: :PATCH%>
