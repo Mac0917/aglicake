@@ -1,0 +1,38 @@
+<%= link_to "logout", destroy_member_session_path, method: :delete %>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <th>氏名</th>
+            <td><%= @member.last_name %> <%= @member.first_name %></td>
+        </tr>
+        <tr>
+            <th>カナ</th>
+            <td><%= @member.last_name_kana %> <%= @member.first_name_kana %> </td>
+        <tr>
+        <tr>
+            <th>郵便番号</th>
+            <td><%= @member.post_number %></td>
+        <tr>
+        <tr>
+            <th>住所</th>
+            <td><%= @member.phone_number %>
+        <tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td><%= @member.email %>
+        </tr>
+        <tr>
+            <th>会員ステータス</th>
+            <td><%=@member.status%></td>
+        <tr>
+    </tbody>
+</table>
+<%= link_to '編集する', edit_member_path(@member.id) %>
+<%= link_to "adminへ", admins_members_path %> <!--あとで消す-->
+<%= link_to "Forgot your password?", new_password_path(@member) %><br />
+
+
+<h1>配送先</h1>
+<h1>注文履歴</h1>
