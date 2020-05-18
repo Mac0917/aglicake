@@ -1,4 +1,5 @@
 <%= link_to "logout", destroy_member_session_path, method: :delete %>
+<%= render "layouts/error_messages", member: @member %>
 <%= form_for(@member) do |f| %>
   <div class="field">
     <%= f.label :姓%><br />
