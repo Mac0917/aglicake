@@ -1,0 +1,9 @@
+ja:
+  enum:
+    status:
+      waiting: "入金待ち"
+      paid: "入金確認済"
+      production: "制作中"
+      delivery: "発送準備中"
+      delivered: "発送済"
+      
