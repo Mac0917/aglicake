@@ -1,0 +1,33 @@
+<h2>商品詳細</h2>
+<!-- form_for部分 -->
+<%= form_for :item, url: admins_items_path do |f| %>
+
+<tr><%#= attachment_image_tag @items, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></tr>
+
+<p>
+  <strong>商品名：</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>商品説明：</strong>
+  <%= @item.explanation %>
+</p>
+<p>
+  <strong>ジャンル：</strong>
+  <%= @genre.name %>
+</p>
+
+<p>
+  <strong>税込価格：</strong>
+  <%= @item.excluded %>円
+</p>
+
+<p>
+  <strong>販売ステータス：</strong>
+  <%= @item.status %>
+</p>
+
+<%= link_to '編集する', edit_admins_item_path(@item)%>
+
+<% end %>
