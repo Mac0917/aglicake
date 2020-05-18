@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
   devise_for :members
-  namespace :admins do   #ただの実験
+  namespace :admins do   
     resources :members, only: [:index, :show, :edit, :update]
+    resources :orders, only: [:index, :show, :update]
   end
   patch "members/status/edit" => "members#status_update", as: "member_status_edit"
-  get 'members/status' #membersのstatusアクションが実行される
-  resources :members, only: [:show, :edit, :update] #memberの新たなurlはresoucesの上に書く
+  get 'members/status' 
+  resources :members, only: [:show, :edit, :update] 
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+
+
 end
