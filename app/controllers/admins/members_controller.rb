@@ -1,5 +1,7 @@
 class Admins::MembersController < ApplicationController
-    
+
+    before_action :authenticate_admin!
+
     def index
         @members = Member.all
     end
@@ -21,6 +23,9 @@ class Admins::MembersController < ApplicationController
             @members = Member.find(params[:id])
             render "edit"
         end
+    end
+
+    def top
     end
 
     private 

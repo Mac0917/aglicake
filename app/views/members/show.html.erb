@@ -1,4 +1,7 @@
-<%= link_to "logout", destroy_member_session_path, method: :delete %>
+<h1>マイページ</h1>
+<h2>登録情報</h2>
+<%= link_to '編集する', edit_member_path(@member.id) %>
+<%= link_to "パスワードを変更する", edit_member_registration_path %>
 <table class="table">
     <thead>
     </thead>
@@ -33,11 +36,7 @@
         <tr>
     </tbody>
 </table>
-<%= link_to '編集する', edit_member_path(@member.id) %>
-<%= link_to "パスワードを変更する", edit_member_registration_path %>
-<%= link_to "adminへ", admins_members_path %> <!--あとで消す-->
-
-
-
 <h1>配送先</h1>
+<%= link_to "一覧を見る", shipping_addresses_path %>
+
 <h1>注文履歴</h1>

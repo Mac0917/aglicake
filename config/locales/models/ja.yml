@@ -13,3 +13,7 @@ ja:
         phone_number: 電話番号
         email: メールアドレス
         password: パスワード
+      shipping_address:
+        post_number: 郵便番号
+        delively_address: 住所
+        delively_name: 宛名

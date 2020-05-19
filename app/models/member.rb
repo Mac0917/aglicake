@@ -4,6 +4,9 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum status:{ 有効会員: 0, 無効会員: 1 }
+  has_many :shipping_addresses, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_many :carts, dependent: :destroy
   validates :last_name, presence: true, format: { with: /\A[一-龥]+\z/, message: "は漢字で入力してください" }
   validates :first_name, presence: true, format: { with: /\A[一-龥ぁ-ん]/, message: "を漢字またはひらがなで入力してください" }
   validates :last_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: "はカタカナで入力して下さい"}
