@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+        </tr>
+	</thead>
+	<tbody>
+		<% @members.each do |member| %>
+			<tr>
+                <td><%=member.id%></td>
+                <td>
+                    <%= link_to admins_member_path(member.id) do %>
+                        <%=member.last_name%><%=member.first_name%>
+                    <%end%>
+                </td>
+                <td><%=member.email%></td>
+                <td><%=member.status%></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+<%= link_to "topへ", root_path %>
