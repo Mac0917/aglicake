@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :item_image
       t.integer :status,default: 0 ,null: false
       t.text :explanation
-      t.text :excluded
+      t.integer :excluded
       t.datetime :created_at
       t.datetime :updated_at
 

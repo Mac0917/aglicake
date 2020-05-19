@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_035732) do
     t.string "item_image"
     t.integer "status", default: 0, null: false
     t.text "explanation"
-    t.text "excluded"
+    t.integer "excluded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -20,7 +20,8 @@
 
 <p>
   <strong>税込価格：</strong>
-  <%= @item.excluded %>円
+   <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
+
 </p>
 
 <p>
