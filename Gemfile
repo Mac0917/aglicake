@@ -63,3 +63,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'devise'
+
+#エラー文日本語化
+gem 'rails-i18n'
+#devise日本語化
+gem "devise-i18n"

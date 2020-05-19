@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'members/status' #membersのstatusアクションが実行される
   root "home#top"
   resources :members, only: [:show, :edit, :update] #memberの新たなurlはresoucesの上に書く
+  
 end
