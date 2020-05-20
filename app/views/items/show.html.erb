@@ -1,6 +1,6 @@
 <h2>商品詳細</h2>
 <!-- form_for部分 -->
-<%= form_for :item, url: admins_items_path do |f| %>
+<%= form_for @cart, url:carts_path, method: :post do |f| %>
 
 <tr><%#= attachment_image_tag @items, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></tr>
 
@@ -23,12 +23,10 @@
    <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
 
 </p>
-
+<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
 <p>
-  <strong>販売ステータス：</strong>
-  <%= @item.status %>
+    <%= f.hidden_field :item_id, :value => @item.id %>
 </p>
 
-<%= link_to '編集する', edit_admins_item_path(@item)%>
-
+<%= f.submit 'カートに入れる' %>
 <% end %>

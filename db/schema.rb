@@ -10,8 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2020_05_19_115241) do
 
-ActiveRecord::Schema.define(version: 2020_05_16_133433) do
+  create_table "carts", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "item_id"
+    t.integer "quantity"
+    t.integer "excluded"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "installs", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +38,17 @@ ActiveRecord::Schema.define(version: 2020_05_16_133433) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_installs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "genre_id"
+    t.string "name"
+    t.string "item_image"
+    t.integer "status", default: 0, null: false
+    t.text "explanation"
+    t.integer "excluded"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -38,31 +64,11 @@ ActiveRecord::Schema.define(version: 2020_05_16_133433) do
     t.string "post_number"
     t.string "address"
     t.string "phone_number"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
-
-ActiveRecord::Schema.define(version: 2020_05_18_035732) do
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.boolean "status", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.integer "genre_id"
-    t.string "name"
-    t.string "item_image"
-    t.integer "status", default: 0, null: false
-    t.text "explanation"
-    t.integer "excluded"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-
   end
 
 end

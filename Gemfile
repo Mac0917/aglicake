@@ -70,4 +70,5 @@ gem 'rails-i18n'
 #devise日本語化
 gem "devise-i18n"
 gem 'kaminari','~> 1.1.1'
+gem 'pry-rails'
 

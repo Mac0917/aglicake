@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  
   devise_for :members
   namespace :admins do   #ただの実験
     resources :members, only: [:index, :show, :edit, :update]
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   get 'members/status' #membersのstatusアクションが実行される
   root "home#top"
   resources :members, only: [:show, :edit, :update] #memberの新たなurlはresoucesの上に書く
- 
+  resources :items, only: [:index, :show, ]
+  resources :carts, onry: [:new, :create, :index, :edit, :update, :destroy] #
 end

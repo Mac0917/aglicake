@@ -12,4 +12,5 @@ class Member < ApplicationRecord
   validates :address, presence: true,  presence: { message: "を入力してください" }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "を入力してください"}
   validates :phone_number, presence: true,  format: { with: /\A\d{10,11}\z/, message: "はハイフンなしで10桁または11桁の数字を入力してください"}
+  has_many :carts, dependent: :destroy
 end

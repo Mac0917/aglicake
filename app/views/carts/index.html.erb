@@ -1,0 +1,43 @@
+<div class='container'>
+
+
+<div class='col-md-6 col-md-offset-3'>
+
+<h1>カート商品一覧</h1>
+
+      <table>
+        <tr>
+          <th>商品名</th>
+          <th>単価(税込)</th>
+          <th>数量</th>
+          <th>小計</th>
+        </tr>
+
+        <%  @carts.each do |cart| %>
+
+          <tr>
+            <td><%= cart.item.name %></td>
+            <td><%= (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %></td>
+         <%= form_for(cart) do |f| %>
+            <td>
+            <div>
+
+      			<%= f.number_field :quantity %>円
+      			<%= f.submit '更新' %>
+    		</div>
+    	</td>
+      
+
+    	 <% end %>
+    	 <td>
+          <%= cart.quantity * (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %>
+         </td>
+           </tr>
+         
+        <% end %>
+
+
+</table>
+</div>
+</div>
+
