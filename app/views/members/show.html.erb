@@ -1,4 +1,7 @@
-<%= link_to "logout", destroy_member_session_path, method: :delete %>
+<h1>マイページ</h1>
+<h2>登録情報</h2>
+<%= link_to '編集する', edit_member_path(@member.id) %>
+<%= link_to "パスワードを変更する", edit_member_registration_path %>
 <table class="table">
     <thead>
     </thead>
@@ -12,16 +15,20 @@
             <td><%= @member.last_name_kana %> <%= @member.first_name_kana %> </td>
         <tr>
         <tr>
+            <th>メールアドレス</th>
+            <td><%= @member.email %>
+        </tr>
+        <tr>
             <th>郵便番号</th>
             <td><%= @member.post_number %></td>
         <tr>
         <tr>
             <th>住所</th>
+            <td><%= @member.address %>
+        <tr>
+        <tr>
+            <th>電話番号</th>
             <td><%= @member.phone_number %>
-        <tr>
-        <tr>
-            <th>メールアドレス</th>
-            <td><%= @member.email %>
         </tr>
         <tr>
             <th>会員ステータス</th>
@@ -29,10 +36,7 @@
         <tr>
     </tbody>
 </table>
-<%= link_to '編集する', edit_member_path(@member.id) %>
-<%= link_to "adminへ", admins_members_path %> <!--あとで消す-->
-<%= link_to "Forgot your password?", new_password_path(@member) %><br />
-
-
 <h1>配送先</h1>
+<%= link_to "一覧を見る", shipping_addresses_path %>
+
 <h1>注文履歴</h1>

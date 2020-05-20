@@ -1,4 +1,5 @@
-<%= link_to "logout", destroy_member_session_path, method: :delete %>
+<h1>登録情報編集</h1>
+<%= render "layouts/error_messages", member: @member %>
 <%= form_for(@member) do |f| %>
   <div class="field">
     <%= f.label :姓%><br />
@@ -41,7 +42,7 @@
   </div>
 
   <div class="form">
-    <%= f.submit "Update User" %>
+    <%= f.submit "編集内容を保存する" %>
   </div>
 <% end %>
 <%= link_to "退会する", "/members/status" %>

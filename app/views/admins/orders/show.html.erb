@@ -6,12 +6,9 @@
   </tr>
   <tr>
     <th>配送先</th>
-      <%
-=begin%>
- <td><%=@order.member.delivery_address %></td>  
-<%
-=end%>
-    </tr>
+    <td><%= @order.delivery_address %>
+
+  </tr>
   <tr>
     <th>支払方法</th>
     <td><%= @order.payment_methods %></td>

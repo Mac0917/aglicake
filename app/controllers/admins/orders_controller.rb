@@ -2,6 +2,7 @@ class Admins::OrdersController < ApplicationController
 
   def index
     @orders = Order.all.order(created_at: :desc).limit(10)
+
   end
 
   def show

@@ -1,5 +1,5 @@
-<h1><%=@member.last_name%><%=@member.first_name%>さんの会員情報編集</h1>
-
+<h1><%=@members.last_name%><%=@member.first_name%>さんの会員情報編集</h1>
+<%= render "layouts/error_messages", member: @member %>
 <%= form_for(@member, url: admins_member_path(@member.id))do |f| %>
 
     <h3>顧客ID<%=@member.id%></h3>

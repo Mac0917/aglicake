@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -22,5 +22,5 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-<%= link_to "パスワード編集", edit_member_password_path%>
+
 <%= render "devise/shared/links" %>
