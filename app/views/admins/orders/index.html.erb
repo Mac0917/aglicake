@@ -1,0 +1,22 @@
+<h2>注文履歴一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>購入日時</th>
+      <th>購入者</th>
+      <th>注文個数</th>
+      <th>注文ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= order.member.last_name %><%= order.member.first_name %></td> 
+        <td><%= order.order_items.sum(:quantity) %></td>
+        <td><%= order.status_i18n %></td>
+        <td><%= link_to '[注文履歴詳細画面]', admins_order_path(order.id) %></td>
+      </tr>
+    <% end %>  
+  </tbody>
+</table>

@@ -64,6 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
+
+gem 'enum_help'
+
 #エラー文日本語化
 gem 'rails-i18n'
 #devise日本語化
@@ -77,3 +80,4 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'pry-byebug'
+

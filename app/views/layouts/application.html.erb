@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
       <header>
           <div class="container">
 
@@ -21,7 +22,7 @@
                     <% if admin_signed_in? %>
                       <li><%= link_to "商品一覧  ", "#", class: 'glyphicon glyphicon-home home' %></li>
                       <li><%= link_to " 会員一覧 ", admins_members_path, class: 'glyphicon glyphicon-home home' %></li>
-                      <li><%= link_to "注文履歴一覧", "#", class: 'glyphicon glyphicon-user users' %></li>
+                      <li><%= link_to "注文履歴一覧", admins_orders_path, class: 'glyphicon glyphicon-user users' %></li>
                       <li><%= link_to "ジャンル一覧", "#", class: 'glyphicon glyphicon-book books' %></li>
                       <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
                     <% elsif member_signed_in? %>
@@ -45,5 +46,6 @@
         <p><%= alert %></p>
       <%end%>
       <%= yield %>
+
   </body>
 </html>
