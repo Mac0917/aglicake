@@ -22,6 +22,7 @@ class MembersController < ApplicationController
     def update   
         @member = Member.find(params[:id])
         if @member.update(member_params)
+           flash[:notice] = "会員情報を編集しました"
            redirect_to member_path(@member.id)
         else
            render "edit"
