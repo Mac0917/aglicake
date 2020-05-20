@@ -6,12 +6,15 @@ class Admins::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    
   end
 
   def update
-    @status = Order.find(prams[:id])
-    @status.update
-    redirect_to admin_orders
+    @order = Order.find(params[:id])
+    # Orderから１件
+    @order.status = params[:status]
+    @order.save
+    redirect_to admins_orders_path
   end
 
 end

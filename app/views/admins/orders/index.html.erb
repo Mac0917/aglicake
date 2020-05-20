@@ -11,12 +11,12 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.create_at %></td>
-        <td><%= order.last_name %><%= order.first_name %></td>
-        <td><%= order.quantity %></td>
-        <td><%= order.status %></td>
+        <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= order.member.last_name %><%= order.member.first_name %></td> 
+        <td><%= order.order_items.sum(:quantity) %></td>
+        <td><%= order.status_i18n %></td>
+        <td><%= link_to '[注文履歴詳細画面]', admins_order_path(order.id) %></td>
       </tr>
     <% end %>  
   </tbody>
 </table>
-

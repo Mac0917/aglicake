@@ -5,5 +5,4 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
   enum status:{ 有効会員: 0, 無効会員: 1 }
 
-  has_many :orders
 end

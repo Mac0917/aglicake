@@ -2,12 +2,16 @@
 <table>
   <tr>
     <th>購入者</th>
-      <td><%= @order.last_name %><%= @order.first_name %></td>
+      <td><%= @order.member.last_name %><%= @order.member.first_name %></td>
   </tr>
   <tr>
     <th>配送先</th>
-      <td><%=@order.delivery_address %></td>
-  </tr>
+      <%
+=begin%>
+ <td><%=@order.member.delivery_address %></td>  
+<%
+=end%>
+    </tr>
   <tr>
     <th>支払方法</th>
     <td><%= @order.payment_methods %></td>
@@ -15,15 +19,20 @@
   <tr>
     <th>注文ステータス</th>
     <td>
-      <%= form_with(model: @order, local: true) do |f| %>
-        <%= f.select :status, Order.budget_ds_i18n.keys.map{|k| [I18n.t("enum.order.status.#{k}"), k]}  %>
+      <%= form_with( local: true, url: admins_order_path(@order.id), method: :patch) do |f| %>
+        <%= f.select :status, options_for_select(Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k ]}) %>
         <%= f.submit '[更新]' %>
       <% end %>
     </td>
   </tr>
 </table>
 
-<table>
+
+
+
+<%
+=begin%>
+ <table>
   <tr>
     <th>商品名</th>
     <th>単価（税込）</th>
@@ -32,7 +41,12 @@
     <th>制作ステータス</th>
   </tr>
 
+  <% @order.order_items.each do |order_item| %>
   <tr>
+  <td><%= order_item.item.name %></td> 
 
   </tr>
-</table>
+  <% end %>
+</table> 
+<%
+=end%>
