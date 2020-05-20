@@ -1,0 +1,48 @@
+<h1>登録情報編集</h1>
+<%= render "layouts/error_messages", member: @member %>
+<%= form_for(@member) do |f| %>
+  <div class="field">
+    <%= f.label :姓%><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :名 %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :セイ %><br />
+    <%= f.text_field :last_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メイ %><br />
+    <%= f.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :郵便番号 %><br />
+    <%= f.text_field :post_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :住所 %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :電話番号 %><br />
+    <%= f.text_field :phone_number%>
+  </div>
+
+  <div class="form">
+    <%= f.submit "編集内容を保存する" %>
+  </div>
+<% end %>
+<%= link_to "退会する", "/members/status" %>
