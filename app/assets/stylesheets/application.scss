@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";    
+
+
+ .contain{
+    margin-top: 70px;
+  }
+
+  .linehight{
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+  
+  .adminform{
+    margin-right: 100px;
+  }
+
+  .mailfield{
+    margin-right: 60px;
+    padding-bottom: 15px;
+    font-size: larger;
+  }
+
+  .field{
+    margin-right: 30px;
+    font-size: larger;
+    padding-bottom: 5px;
+  }
+  
+  .admins{
+    color: gray;
+    margin-right: 650px;
+  }
+  
+  .row{
+    margin-top: 130px;
+    text-align: center;
+    line-height: 20px;
+  }
+  
+  .row2{
+    margin-top: 170px;
+  }
+  
+  .title{
+    color: white;
+  }
+
+  .col-box{
+    padding-top: 30px;
+  }
+  
+  .clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+    }
+  
+  
+  .box1 {
+    background-color: #FFFFFF;
+    height: 130px;
+    width: 130px;
+    float: left;
+    margin-left: 50px;
+  }
+  
+  .bg1 {
+      background-color: blue;
+  }
+   
+  .bg2 {
+      background-color: gold;
+  }
+   
+  .bg3 {
+      background-color: lightgreen;
+  }
+   
+  .bg4 {
+      background-color: red;
+  }
+  
+  .main {
+    padding-top: 80px;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  
+  .osusumetab{
+    font-style: initial;
+    padding-right: 500px;
+    padding-top: 20px;
+  }
+  
+  .inside-box{
+    padding-top: 150px;
+    margin-right: 20px;
+    font-size: 17px;
+  }
+  
+  .footerbox{
+    float: right;
+    padding: 120px  0 200px;
+    padding-left:  50px;
+  }
+  
+  .footer-box{
+  margin-left: 1200px;
+  }
+  
+  .admons-box{
+    padding-top: 30px;
+  }
+  
+  .oerdercount{
+    padding-top: 70px;
+  }
+  
+  .comment{
+    padding-top: 150px;
+    margin-left: 200px;
+  }
