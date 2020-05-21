@@ -12,7 +12,7 @@
           <th>数量</th>
           <th>小計</th>
         </tr>
-
+        <% price_all = 0 %>
         <%  @carts.each do |cart| %>
 
           <tr>
@@ -22,20 +22,20 @@
             <td>
             <div>
 
-      			<%= f.number_field :quantity %>円
-      			<%= f.submit '更新' %>
-    		</div>
-    	</td>
-      
+            <%= f.number_field :quantity %>円
+            <%= f.submit '更新' %>
+        </div>
+      </td>
+      <td><%= link_to '削除',  cart_path(cart), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
 
-    	 <% end %>
-    	 <td>
-          <%= cart.quantity * (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %>
+       <% end %>
+       <td>
+          <%= syoukei = cart.quantity * (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %>
          </td>
            </tr>
-         
+         <% price_all = price_all + syoukei %>
         <% end %>
-
+     <%= price_all %>
 
 </table>
 </div>
