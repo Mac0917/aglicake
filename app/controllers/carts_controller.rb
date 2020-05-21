@@ -1,28 +1,25 @@
 class CartsController < ApplicationController
 
 
-
-	def index
-    @carts = Cart.where(member_id: current_member.id)
+def index
     
-	end
-	def create
+    @carts = Cart.where(member_id: current_member.id)
+    end
+    def create
          @cart = current_member.carts.new(cart_params)
-         curt_item = current_member.carts.find_by(item_id: params[:cart][:item_id])
-         if curt_item
-             
-             
+         cart_item = current_member.carts.find_by(item_id: params[:cart][:item_id])
+         if cart_item
 
-                 curt_item.quantity += params[:cart][:quantity].to_i
-                 
-                 curt_item.save!
-                 
-           
+
+                 cart_item.quantity += params[:cart][:quantity].to_i
+                 cart_item.save!
+
+
         else
             @cart = current_member.carts.new(cart_params)
              @cart.save!
          end
-
+                flash[:success] = 'カートに商品を追加しました'
                 redirect_back(fallback_location: root_path)
     end
 
@@ -37,8 +34,8 @@ class CartsController < ApplicationController
 
 
     def destroy
-            item = Item.find(params[:item_id])
-            cart = current_member.carts.find_by(item_id: item.id)
+            #cart = current_member.carts.find_by(params[:item_id])
+            cart = Cart.find(params[:id])
             cart.destroy
             redirect_back(fallback_location: root_path)
     end
@@ -50,3 +47,4 @@ class CartsController < ApplicationController
 
 
 end
+

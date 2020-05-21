@@ -24,12 +24,7 @@
   </tr>
 </table>
 
-
-
-
-<%
-=begin%>
- <table>
+<table>
   <tr>
     <th>商品名</th>
     <th>単価（税込）</th>
@@ -37,13 +32,17 @@
     <th>小計</th>
     <th>制作ステータス</th>
   </tr>
-
   <% @order.order_items.each do |order_item| %>
   <tr>
   <td><%= order_item.item.name %></td> 
-
+  <td><%= order_item.item.sum(:quantity) %></td>
+  <td><%= order_item.item.price %></td>
+  <td>
+    <%= form_with( local: true, url: admins_order_items_edit_path(orde_item.id), method: :patch) do |f| %>
+      <%= f.select :status, options_for_select(OrderItems.statuses.keys.map {|k| [I18n.t("enums.order_item.status.#{k}"), k ]}) %>
+      <%= f.submit '[更新]' %>
+    <% end %>
+  </td>
   </tr>
   <% end %>
 </table> 
-<%
-=end%>

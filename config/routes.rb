@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, controllers: {
     sessions:        "admins/sessions",  #admins/sessionsはコントローラー名
     passwords:       "admins/passwords",
@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     passwords:       "members/passwords",
     registrations:   "members/registrations"
   }
-  
-  namespace :admins do   
+
+  namespace :admins do
     resources :members, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :update]
     resources :items, only: [:new, :create, :index, :show, :edit, :update]
@@ -20,14 +20,15 @@ Rails.application.routes.draw do
   end
   patch 'admins/orders_items/:id' => 'admins#order_items#update', as: 'admins_order_items_edit'
 
-  get 'members/status' 
+  get 'members/status'
   patch "members/status/edit" => "members#status_update", as: "member_status_edit"
-  resources :members, only: [:show, :edit, :update] 
+  resources :members, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
   resources :shipping_addresses
   resources :items, only: [:index, :show, ]
-  resources :carts, onry: [:new, :create, :index, :edit, :update, :destroy] 
+  resources :carts, onry: [:new, :create, :index, :edit, :update, :destroy]
+  delete 'carts/destroy_all'
   resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   get 'orders/thanks'
   get 'orders/purchase'
