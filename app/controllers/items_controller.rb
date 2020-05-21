@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_member!, except: [:top]
 	def index
   	@items = Item.page(params[:page]).reverse_order
     @genres = Genre.all
