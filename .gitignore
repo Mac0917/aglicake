@@ -31,6 +31,7 @@
 /config/master.key
 
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -39,3 +40,10 @@
 >>>>>>> dd3cb263bfa13ff8a0e4c74885f5af3f05cc7629
 .Ds_Store
 
+=======
+<<<<<<< HEAD
+.Ds_Store
+=======
+.Ds_Store
+>>>>>>> a8f3a439e38443fdad3feb76f0c2fa801d04822b
+>>>>>>> 6fc888185396b3e8c36bdf160058c5591ef854a4

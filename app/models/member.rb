@@ -4,7 +4,6 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum status:{ 有効会員: 0, 無効会員: 1 }
-
   has_many :shipping_addresses, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :carts, dependent: :destroy
@@ -13,7 +12,7 @@ class Member < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: "はカタカナで入力して下さい"}
   validates :first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: "はカタカナで入力して下さい"}
   validates :post_number, presence: true, format: { with: /\A\d{7}\z/, message: "は半角でハイフンなしの7桁の数字を入力してください"}
-  validates :address, presence: true,  presence: { message: "を入力してください" }
+  validates :address, presence: { message: "を入力してください" }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "を入力してください"}
   validates :phone_number, presence: true,  format: { with: /\A\d{10,11}\z/, message: "はハイフンなしで10桁または11桁の数字を入力してください"}
 end

@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
         case resource
         when Member
-            flash[:notice] = "ようこそ、#{resource.last_name}さん！"
-            items_path
+            flash[:notice] = "ようこそ、#{resource.last_name}さん"
+            items_path(resource)
         when Admin
             admins_top_path
         end
@@ -21,9 +21,7 @@ class ApplicationController < ActionController::Base
     end
 
     def after_update_path_for(resource)
-        
-          members_path(resource)
-        
+        members_path(resource)
     end
     
     protected
