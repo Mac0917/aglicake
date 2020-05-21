@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_075512) do
     t.string "post_number"
     t.string "address"
     t.string "phone_number"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_members_on_email", unique: true
