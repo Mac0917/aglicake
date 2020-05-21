@@ -4,5 +4,5 @@ class Item < ApplicationRecord
         def cart_by?(member)
             cart.where(member_id: member.id).exists?
         end
-	enum status:{sale: 0,notsale:1 }
+	enum status:{販売中: 0,販売不可:1 }
 end
