@@ -1,0 +1,36 @@
+<div class='container'>
+
+
+<div class='col-md-6 col-md-offset-3'>
+<h2>商品新規登録</h2>
+
+<%= form_for :item, url: admins_items_path do |f| %>
+
+<div class="field">
+  <div class="item_image"></div>
+  <P></p>
+ <label for="item_image">Image</label>
+ 
+  <%#= f.attachment_field :item_image, placeholder: "商品画像", class: "item-form" %>
+  </div>
+
+
+    <h4>商品名</h4>
+    <%= f.text_field :name %>
+
+    <h4>商品説明</h4>
+    <%= f.text_area :explanation %>
+    <h4>ジャンル</h4>
+    <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+
+    <h4>税抜価格</h4>
+    <%= f.number_field :excluded %>
+    <h4>販売ステータス</h4>
+     <%= f.select :status, Item.statuses.keys.to_a, {} %>
+<p>
+<%= f.submit  %>
+	
+<% end %>
+</p>
+</div>
+</div>

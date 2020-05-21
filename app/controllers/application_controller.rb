@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
         case resource
         when Member
             flash[:notice] = "ようこそ、#{resource.last_name}さん！"
-            member_path(resource)
+            items_path
         when Admin
             admins_top_path
         end

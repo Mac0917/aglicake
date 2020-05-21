@@ -1,0 +1,64 @@
+<div class='container'>
+
+
+  <div class='col-md-6 col-md-offset-3'>
+
+  <h1>商品編集</h1>
+  <!-- form_for部分 -->
+  <%= form_for :item, url: admins_item_path(@item), method: :patch do |f| %>
+
+  <div class="field row">
+    <div>
+
+    </div>
+      <label for="item_title">商品名</label>
+      <br>
+      <%= f.text_field :name, class:"form-control" %>
+
+
+    <div>
+      <label for="item_explanation">商品説明</label>
+      <br>
+
+      <%= f.text_area :explanation, class:"form-control" %>
+    </div>
+
+   <div>
+      <label for="item_excluded">ジャンル</label>
+      <br>
+ <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+        
+   </div>
+    <div>
+      <label for="item_excluded">税抜価格</label>
+      <br>
+
+      <%= f.number_field :excluded, class:"form-control" %>円
+    </div>
+
+     <div>
+        <label for="item_excluded">販売ステータス</label>
+        <br>
+
+        <%= f.select :status, Item.statuses.keys.to_a, {} %>
+      </div>
+      <div class="actions row">
+      <%= f.submit  %>
+      </div>
+
+
+
+</div>
+  </div>
+</div>
+
+
+</div>
+
+  <% end %>
+
+
+
+  </div>
+  </div>
+</div>
