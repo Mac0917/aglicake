@@ -26,9 +26,10 @@ def index
 
     if @item.update(item_params)
     	flash[:notice] = "Item was successfully edited."
-    redirect_to admins_items_path
+      redirect_to admins_items_path
      else
-     redirect_to admins_items_path
+      @genres = Genre.all
+      render "admins/items/edit"
    end
   end
 
@@ -37,10 +38,10 @@ def index
 
      if @item.save
      	flash[:notice] = "商品を追加しました"
-     redirect_to admins_items_path
+      redirect_to admins_items_path
      else
-      flash[:notice] = "商品を追加出来ませんでした"
-     redirect_to admins_items_path
+      @genres = Genre.all
+      render "admins/items/new"
 
      end
   end

@@ -1,5 +1,6 @@
 <h2>商品詳細</h2>
 <!-- form_for部分 -->
+<%= render "layouts/item_error_messages", item: @item %>
 <%= form_for :item, url: admins_items_path do |f| %>
 
 <tr><%#= attachment_image_tag @items, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></tr>
