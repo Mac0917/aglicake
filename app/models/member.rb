@@ -20,4 +20,16 @@ class Member < ApplicationRecord
     
   end
 
+  #以下、郵便番号で住所が自動入力されるコードです
+  include JpPrefecture
+  jp_prefecture :post_number
+  
+  def prefecture_name
+    JpPrefecture::Prefecture.find(code: post_number).try(:name)
+  end
+  
+  def prefecture_name=(prefecture_name)
+    self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
+  end
+
 end
