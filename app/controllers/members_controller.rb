@@ -1,14 +1,9 @@
 class MembersController < ApplicationController
 
-    before_action :authenticate_member!, except: [:top]
+    before_action :authenticate_member!
 
     def show
         @member = Member.find(current_member.id)
-        if @member.status == "無効会員"
-            reset_session
-            flash[:notice] = "このメールアドレスは使用できません"
-            redirect_to root_path
-        end
     end
 
     def edit

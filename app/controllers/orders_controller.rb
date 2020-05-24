@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_member!, except: [:top]
   def index
   @orders = Order.all
   @oreder = current_order
