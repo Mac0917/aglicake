@@ -19,26 +19,14 @@ class OrdersController < ApplicationController
   def purchase
     # newのフォームで送れてきた情報を表示したい
     @order = Order.new(order_params)
-
-    if @order.valid?
-
-    else
-      render :new
-    end
-
-   @cratitems = current_member.carts
+    @cratitems = current_member.carts
     @sum = 0
     current_member.carts.each do |cart|
       @sum = cart.quantity * cart.excluded
     end
     @delivery_price = 800
     @total_price = (@delivery_price + @sum) * BigDecimal("1.1").floor 
-
-    #current_member.cart_items_total_amount
-    # =>1000
-    #current_member.billing_total_amount
-    # => 1800  ((cart_items_total_amount +  delivery_price) *tax )
-  end
+  end
 
   def create
     @order = Order.new(order_params) 
