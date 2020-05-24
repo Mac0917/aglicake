@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     resources :genres, onry: [:new, :create, :index, :edit, :update, :destroy]
   end
   patch 'admins/orders_items/:id' => 'admins#order_items#update', as: 'admins_order_items_edit'
-
   get 'members/status'
   patch "members/status/edit" => "members#status_update", as: "member_status_edit"
   resources :members, only: [:show, :edit, :update]
@@ -29,9 +28,9 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, ]
   resources :carts, onry: [:new, :create, :index, :edit, :update, :destroy]
   delete 'carts/destroy_all'
-  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   get 'orders/thanks'
   get 'orders/purchase'
+  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   root "home#top"
   get "admins/top" => "admins/members#top", as: "admins_top"
 end

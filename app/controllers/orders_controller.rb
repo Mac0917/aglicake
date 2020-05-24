@@ -13,15 +13,21 @@ class OrdersController < ApplicationController
   @order = Order.new
   end
 
+  def post
+    
+  end
+
+
+
   def create
     @order = Order.new(order_params) 
 		@order.member_id = current_member.id
 		@member = current_member
-  	if @order.save #入力されたデータをdbに保存する。
-  		redirect_to order_path(@order.id), notice: "successfully created order!"#保存された場合の移動先を指定。
+    if @order.save #入力されたデータをdbに保存する。
+      flash[:notice] = "注文情報をを登録しました"
+  		redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
   	else
-  		@orders = Order.all
-  		render 'index'
+  		render 'new'
   	end
   end
 
@@ -29,13 +35,20 @@ class OrdersController < ApplicationController
   end
 
   def purchase
+    @cratitems = current_member.carts
+    @sum = 0
+    current_member.carts.each do |cart|
+      @sum = cart.quantity * cart.excluded
+    end
+    @delivery_price = 800
+    @total_price = (@delivery_price + @sum) * BigDecimal("1.1").floor 
   end
 
 
 
   private
   def order_params
-    params.require(:order).permit(:member_id, :delivery_address, :delivery_price, :delivery_name, :payment_methods,:status, :total_price, :created_at, :updated_at)
+    params.require(:order).permit(:member_id, :delivery_address, :delivery_price, :delivery_name, :payment_methods,:status, :total_price, :created_at, :updated_at, :post_number)
   end
 
 end
