@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.valid?
-
+      
     else
       render :new
     end
