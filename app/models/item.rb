@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
     belongs_to :genre
-    belongs_to :order
+    belongs_to :order, optional: true
 	 has_many :carts, dependent: :destroy
         def cart_by?(member)
             cart.where(member_id: member.id).exists?
