@@ -5,7 +5,6 @@
 
 <h2>ジャンル検索</h2>
 <% @genres.each do |a| %>
-
 <%= link_to a.name , items_path(genre_id: a.id) %>
 <% end %>
 
@@ -15,7 +14,7 @@
           <th>商品ID</th>
           <th>商品名</th>
           <th>税抜価格</th>
-           <th>ジャンル</th>
+          <th>ジャンル</th>
           <th>ステータス</th>
         </tr>
 
