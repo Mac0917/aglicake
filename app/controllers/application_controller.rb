@@ -5,8 +5,14 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
         case resource
         when Member
+            if resource.status == "無効会員"
+                reset_session
+                flash[:notice] = "このメールアドレスは使用できません"
+                root_path
+            else
             flash[:notice] = "ようこそ、#{resource.last_name}さん"
             items_path(resource)
+            end
         when Admin
             admins_top_path
         end
