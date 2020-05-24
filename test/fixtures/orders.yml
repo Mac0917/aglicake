@@ -1,6 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<<<<<<< HEAD
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
@@ -10,7 +9,6 @@ one: {}
 #
 two: {}
 # column: value
-=======
 one:
   member_id: MyString
   : 1
@@ -50,4 +48,3 @@ two:
   : 2020-05-20 08:54:08
   updated_at: MyString
   : 2020-05-20 08:54:08
->>>>>>> 6fc888185396b3e8c36bdf160058c5591ef854a4
