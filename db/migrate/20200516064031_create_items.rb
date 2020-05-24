@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 
       t.integer :genre_id
       t.string :name
-      t.string :item_image
+      t.string :item_image_id
       t.integer :status,default: 0 ,null: false
       t.text :explanation
       t.integer :excluded

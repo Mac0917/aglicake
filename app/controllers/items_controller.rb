@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   
   def index
       @items = Item.page(params[:page]).reverse_order
-      @genres = Genre.all
+      @genres = Genre.where(status: "有効")
       if params[:genre_id].nil?
         @genre = Genre.new
         @genre.name = "商品"
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-      params.require(:item).permit(:name, :explanation, :status, :excluded, :genre_id)
+      params.require(:item).permit(:name, :explanation, :status, :excluded, :genre_id, :item_image )
   end
 
 end
