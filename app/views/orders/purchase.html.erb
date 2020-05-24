@@ -1,11 +1,10 @@
-<div class="container">
-<div class="row">
-<div class="oreder-info"><h2>注文情報確認</h2></div>
-<div class="linehight">
-</div>
+      <div class="container">
+      <div class="row">
+      <div class="oreder-info"><h2>注文情報確認</h2></div>
+      <div class="linehight">
+      </div>
 
-<div class='col-md-6 col-md-offset-3'>
-
+      <div class='col-md-6 col-md-offset-3'>
       <table>
       <thead>
         <tr>
@@ -13,32 +12,50 @@
           <th>単価（税込）</th>
           <th>数量</th>
            <th>小計</th>
+           <th></th>
             </tr>
           </thead>
          <tbody>
-        </tr>
-        <th>（仮）いちごのショートケーキ</th>
-          <th>（仮）￥1100</th>
-          <th>（仮）1</th>
-           <th>（仮）1100</th>
+         <% price_all = 0 %>
+        <% @cartitems.each do |cartitem| %>
+        <tr>
+        <th><%=cartitem.item.item_id%></th>
+          <th><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</th>
+          <th><%=cartitem.item.quantity%></th>
+           <th><%=cartitem.item.excluded%></th>
+           <th></th>
+           <% end %>
+           <th>送料<%= @delivery_price %></th>
+           <th>商品合計<%= @sum%></th>
+           <th>請求金額<%= @total_price%></th>
+          </tr>
            </tbody>
 
-</table>
+           </table>
 
-<div class="payment">
-<h2>支払方法</h2></div>
+          <div class="payment">
+          <h2>支払方法</h2>
+          <% @order.payment_methods%>
+          </div>
 
-<div class="address">
-<h2>お届け先</h2></div>
+          <div class="address">
+          <h2>お届け先</h2>
+          <% current_member.shipping_addresses.post_number%>　<%= current_member.shipping_addresses.delively_address%>　<%= current_member.last_name%>　<%= current_member.first_name%>
+          </div>
 
-<div class="actions">
-    <%= link_to '購入を確定する',orders_thanks_path %>
-  </div>
+          <div class="actions">
+          <%= link_to '購入を確定する',orders_thanks_path %>
+         </div>
 
-</div>
-</div>
+         </div>
+         </div>
+
+         <%= form_with model: @order do |f| %>
+         <%= f.hidden_field :payment_methods, value: @order.payment_methods %>
+         <%= f.hidden_field :payment_methods, value: @order.delivery_address %>
+         <%= f.submit '購入を確定する'%>
+         <% end %>
 
-
-</div>
-</div>
-</div>
+         </div>
+         </div>
+         </div>
