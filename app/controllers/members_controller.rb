@@ -1,14 +1,9 @@
 class MembersController < ApplicationController
 
-    before_action :authenticate_member!, except: [:top]
+    before_action :authenticate_member!
 
     def show
         @member = Member.find(current_member.id)
-        if @member.status == "無効会員"
-            reset_session
-            flash[:notice] = "このメールアドレスは使用できません"
-            redirect_to root_path
-        end
     end
 
     def edit
@@ -19,7 +14,7 @@ class MembersController < ApplicationController
         end
     end
 
-    def update   
+    def update
         @member = Member.find(params[:id])
         if @member.update(member_params)
            flash[:notice] = "会員情報を編集しました"
@@ -28,7 +23,7 @@ class MembersController < ApplicationController
            render "edit"
         end
     end
-    
+
     def status
     end
 
@@ -40,11 +35,10 @@ class MembersController < ApplicationController
         redirect_to root_path
     end
 
-    private 
+    private
 
     def member_params
         params.require(:member).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email, :post_number, :address, :phone_number)
     end
 
 end
-        
