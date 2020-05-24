@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   
   belongs_to :member
-  has_many :item
+  has_many :items
   has_many :carts
   has_many :order_items
   enum payment_methods: { bank: 0, credit: 1 } #支払い情報用
