@@ -6,10 +6,14 @@
   <h1>商品編集</h1>
   <%= render "layouts/item_error_messages", item: @item %>
   <!-- form_for部分 -->
-  <%= form_for :item, url: admins_item_path(@item), method: :patch do |f| %>
+  <%= form_for @item, url: admins_item_path(@item), method: :patch do |f| %>
 
   <div class="field row">
-    <div>
+    <div class="item_image"></div>
+   <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+
+     <br>
+      <%= f.attachment_field :item_image, placeholder: "商品画像" %>
 
     </div>
       <label for="item_title">商品名</label>
@@ -28,7 +32,7 @@
       <label for="item_excluded">ジャンル</label>
       <br>
  <%= f.collection_select(:genre_id, @genres, :id, :name) %>
-        
+
    </div>
     <div>
       <label for="item_excluded">税抜価格</label>

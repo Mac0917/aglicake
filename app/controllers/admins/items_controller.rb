@@ -49,7 +49,7 @@ def index
 
 private
     def item_params
-      params.require(:item).permit(:name, :explanation, :status, :excluded, :genre_id)
+      params.require(:item).permit(:name, :explanation, :status, :excluded, :genre_id, :item_image)
     end
 
 
