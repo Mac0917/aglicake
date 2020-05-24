@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :members, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :update]
     resources :items, only: [:new, :create, :index, :show, :edit, :update]
-    resources :genres, onry: [:new, :create, :index, :edit, :update, :destroy]
+    resources :genres, only: [:new, :create, :index, :edit, :update, :destroy]
   end
   patch 'admins/orders_items/:id' => 'admins#order_items#update', as: 'admins_order_items_edit'
 
@@ -27,8 +27,9 @@ Rails.application.routes.draw do
 
   resources :shipping_addresses
   resources :items, only: [:index, :show, ]
-  resources :carts, onry: [:new, :create, :index, :edit, :update, :destroy]
   delete 'carts/destroy_all'
+  resources :carts, only: [:new, :create, :index, :edit, :update, :destroy]
+
   resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   get 'orders/thanks'
   get 'orders/purchase'
