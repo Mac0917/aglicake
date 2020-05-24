@@ -30,9 +30,11 @@ Rails.application.routes.draw do
   delete 'carts/destroy_all'
   resources :carts, only: [:new, :create, :index, :edit, :update, :destroy]
 
+
   resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   get 'orders/thanks'
-  get 'orders/purchase'
+  get 'members/orders/purchase/' => "orders#purchase", as: "order_purchase"
+
   root "home#top"
   get "admins/top" => "admins/members#top", as: "admins_top"
 end
