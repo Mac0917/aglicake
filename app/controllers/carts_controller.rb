@@ -1,13 +1,14 @@
 class CartsController < ApplicationController
 
+    before_action :authenticate_member!
 
-def index
-    @carts = Cart.where(member_id: current_member.id)
+    def index
+        @carts = Cart.where(member_id: current_member.id)
     end
     def create
-         @cart = current_member.carts.new(cart_params)
-         cart_item = current_member.carts.find_by(item_id: params[:cart][:item_id])
-         if cart_item
+        @cart = current_member.carts.new(cart_params)
+        cart_item = current_member.carts.find_by(item_id: params[:cart][:item_id])
+        if cart_item
 
 
                  cart_item.quantity += params[:cart][:quantity].to_i
