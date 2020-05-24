@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
 	def index
+     @genres = Genre.all
+    if params[:genre_id].nil?
+
   	@items = Item.page(params[:page]).reverse_order
-    @genres = Genre.all
+   else
+    genre = Genre.find(params[:genre_id])
+    @items = Item.where(genre_id: genre.id).page(params[:page]).reverse_order
+    end
   end
-
-
 
   def show
       @item = Item.find(params[:id])
