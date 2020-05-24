@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   
   def index
+
     if member_signed_in? 
         @items = Item.page(params[:page]).reverse_order
         @genres = Genre.all
@@ -14,6 +15,7 @@ class ItemsController < ApplicationController
         @items = Item.page(params[:page]).reverse_order
         @genres = Genre.all
     end
+         
   end
 
   def show
