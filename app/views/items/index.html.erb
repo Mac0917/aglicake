@@ -9,7 +9,7 @@
 <%= link_to a.name , items_path(genre_id: a.id) %>
 <% end %>
 
-<h1><%= @genres.name %>一覧</h1>
+<h1><%= @genre.name %>一覧</h1>
       <table>
         <tr>
           <th>商品ID</th>
@@ -20,6 +20,7 @@
         </tr>
 
         <% @items.each do |item| %>
+
           <tr>
             <td><%= item.id %></td>
             <td><%= link_to item.name, item_path(item.id) %></td>
