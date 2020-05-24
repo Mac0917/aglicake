@@ -38,9 +38,13 @@ class ItemsController < ApplicationController
       @cart = Cart.new
   end
 
-  private
 
-  def item_params
+
+
+
+
+private
+    def item_params
       params.require(:item).permit(:name, :explanation, :status, :excluded, :genre_id)
   end
 
