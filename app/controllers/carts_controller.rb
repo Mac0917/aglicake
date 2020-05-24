@@ -42,6 +42,14 @@ class CartsController < ApplicationController
             redirect_back(fallback_location: root_path)
     end
 
+    def destroy_all
+                #cart = current_member.carts.find_by(params[:item_id])
+                cart = Cart.where(member_id: current_member.id)
+                cart.destroy_all
+                redirect_back(fallback_location: root_path)
+
+    end
+
         private
           def cart_params
             params.require(:cart).permit(:item_id, :quantity)
