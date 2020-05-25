@@ -15,8 +15,8 @@
                   <div style="padding: 10px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #ffa070; color: #ffffff;">
                   <h1><strong>LOGO</strong></h1>
                   </div>
-                </nav>
-                <nav>
+                   </nav>
+                    <nav>
                   <ul class="nav navbar-nav navbar-right">
                       <% if admin_signed_in? %>
                         <li><%= link_to "商品一覧", admins_items_path, class: 'glyphicon glyphicon-home home' %></li>
@@ -36,8 +36,8 @@
                       <% end %>
                   </ul>
                 </nav>
-        </div>
-    </header>
+             </div>
+           </header>
       <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
       <%end%>

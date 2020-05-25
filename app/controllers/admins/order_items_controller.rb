@@ -1,10 +1,10 @@
 class Admins::OrderItemsController < ApplicationController
   
   def update
-    @order_item = Order_items.find([:id])
-    @order_item.status = params(:status)
-    @status.update
-    redirect_to admins_order_items_edit_path
+    @order_item = OrderItem.find(params[:id])
+    @order_item.status = params[:status]
+    @order_item.save
+    redirect_to request.referer
   end
-end
 
+end

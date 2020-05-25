@@ -14,7 +14,10 @@
         <tr>
           <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
           <td><%= order.member.last_name %><%= order.member.first_name %></td> 
-          <td><%= order.order_items.sum(:quantity) %></td>
+          <% order.order_items.each do |order_item| %>
+              <% @item_total_sum += order_item.quantity %>
+          <% end %>
+          <td><%= @item_total_sum %></td>
           <td><%= order.status_i18n %></td>
           <td><%= link_to "#{order.member.last_name}さんの注文履歴詳細", admins_order_path(order.id) %></td>
         </tr>
