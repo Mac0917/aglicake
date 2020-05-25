@@ -16,7 +16,7 @@
           <td><%= order.member.last_name %><%= order.member.first_name %></td> 
           <td><%= order.order_items.sum(:quantity) %></td>
           <td><%= order.status_i18n %></td>
-          <td><%= link_to '[注文履歴詳細画面]', admins_order_path(order.id) %></td>
+          <td><%= link_to "#{order.member.last_name}さんの注文履歴詳細", admins_order_path(order.id) %></td>
         </tr>
       <% end %>  
     </tbody>
