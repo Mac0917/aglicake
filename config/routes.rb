@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, ]
   delete 'carts/destroy_all'
   resources :carts, only: [:new, :create, :index, :edit, :update, :destroy]
-  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   get 'orders/thanks'
-  get 'orders/purchase'
+  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
+  post 'orders/purchase'
   resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   root "home#top"
   get "admins/top" => "admins/members#top", as: "admins_top"

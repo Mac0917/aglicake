@@ -16,8 +16,5 @@ class Member < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "を入力してください"}
   validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "はハイフンなしで10桁または11桁の数字を入力してください"}
 
-  def cart_items_total_amout
-    
-  end
 
 end
