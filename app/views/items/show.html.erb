@@ -1,8 +1,14 @@
+<div class='container'>
+
+<div class='col-md-6 col-md-offset-3'>
+
+
+<%= notice %>
 <h2>商品詳細</h2>
 <!-- form_for部分 -->
 <%= form_for @cart, url:carts_path, method: :post do |f| %>
 
-<tr><%#= attachment_image_tag @items, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></tr>
+<tr><%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %></tr>
 
 <p>
   <strong>商品名：</strong>
@@ -30,3 +36,6 @@
 
 <%= f.submit 'カートに入れる' %>
 <% end %>
+
+</div>
+</div>

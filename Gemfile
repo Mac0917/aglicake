@@ -87,4 +87,8 @@ gem 'kaminari','~> 1.1.1'
 gem 'pry-rails'
 
 
+#郵便番号で住所も自動で入力
+gem "jp_prefecture"
+
+
 
