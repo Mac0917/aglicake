@@ -20,11 +20,11 @@ class OrdersController < ApplicationController
   def purchase
     # newのフォームで送れてきた情報を表示したい
     session[:order] = Order.new
-       session[:order][:payment_methods] = params[:order][:payment_methods]
+      session[:order][:payment_methods] = params[:order][:payment_methods]
     if params[:order][:delivery_select] == "2" 
-       session[:order][:post_number] = current_member.post_number
-       session[:order][:delivery_address] = current_member.address
-       session[:order][:delivery_name] = current_member.last_name + current_member.first_name
+      session[:order][:post_number] = current_member.post_number
+      session[:order][:delivery_address] = current_member.address
+      session[:order][:delivery_name] = current_member.last_name + current_member.first_name
     elsif params[:order][:delivery_select] == "3"
       address = ShippingAddress.find(params[:order][:register_address])
       session[:order][:delivery_address] = address.delively_address
@@ -62,14 +62,13 @@ class OrdersController < ApplicationController
       end
       redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
       Cart.destroy_all
-  	else
-  		render 'new'
-  	end
+    else
+      render 'new'
+    end
   end
 
   def thanks
   end
-
 
   private
   def order_params

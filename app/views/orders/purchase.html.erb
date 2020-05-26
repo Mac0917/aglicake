@@ -15,8 +15,8 @@
           <th>数量</th>
           <th></th>
           <th></th>
-           <th>小計</th>
-           <th></th>
+          <th>小計</th>
+          <th></th>
             </tr>
             </thead>
             <tbody>
@@ -30,20 +30,20 @@
           <th><%=cartitem.quantity%></th>
           <th></th>
            <th><%= ((cartitem.quantity * cartitem.item.excluded) * 1.1).floor %></th>
-           <th></th>
-           <% end %>
-           </tr>
-           <tr>
-           <th>送料<%= session[:order][:delivery_price] %></th>
-           </tr>
-           <tr>
-           <th>商品合計<%= @sum %></th>
-           </tr>
-           <tr>
-           <th><h4>請求金額<%= session[:order][:total_price] %></h4></th>
-           </tr>
-           </tbody>
-           </table>
+          <th></th>
+          <% end %>
+          </tr>
+          <tr>
+          <th>送料<%= session[:order][:delivery_price] %></th>
+          </tr>
+          <tr>
+          <th>商品合計<%= @sum %></th>
+          </tr>
+          <tr>
+          <th><h4>請求金額<%= session[:order][:total_price] %></h4></th>
+          </tr>
+          </tbody>
+          </}table>
           <div class="payment"><br>
           <h2><strong>支払方法</strong></h2>
           <h3><%= session[:order][:payment_methods] %></h3>
@@ -56,12 +56,11 @@
 
         <div class="actions"><br>
         <%= link_to '購入を確定する',orders_path, method: :post %>
-         </div>
-
-         </div>
-         </div>
+        </div>
+        </div>
+        </div>
 
-         </div>
-         </div>
-         </div>
+        </div>
+        </div>
+        </div>
         

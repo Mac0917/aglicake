@@ -1,29 +1,37 @@
-<h2 class="my-3 ml-3">注文履歴一覧</h2><br/>
-<div class="col-5 ml-3">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th >購入日時</th>
-        <th>購入者</th>
-        <th>注文個数</th>
-        <th>注文ステータス</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each do |order| %>
-        <tr>
-          <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= link_to"#{order.member.last_name}", admins_order_path(order.id) %><%= order.member.first_name %></td> 
-          <% order.order_items.each do |order_item| %>
-            <% @item_total_sum += order_item.quantity %>
-          <% end %>
-          <td><%= @item_total_sum %></td>
-          <td><%= order.status_i18n %></td>
-        </tr>
-        <% @item_total_sum = 0 %>
-      <% end %>  
-    </tbody>
-  </table>
+
+<div class="container">
+  <div class="row">
+  <h2>注文一覧画面</h2>
+  <p></p>
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><p>購入日時</p></th>
+            <th><p>購入者</p></th>
+            <th><p>注文個数</p></th>
+            <th><p>注文ステータス</p></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <% @full_name = order.member.last_name + order.member.first_name %>
+            <tr>
+              <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+              <td><%= link_to"#{@full_name}", admins_order_path(order.id) %> 
+              <% order.order_items.each do |order_item| %>
+                <% @item_total_sum += order_item.quantity %>
+              <% end %>
+              <td><%= @item_total_sum %></td>
+              <td><%= order.status_i18n %></td>
+            </tr>
+            <% @item_total_sum = 0 %>
+          <% end %>  
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
 
 <%= paginate(@orders) %>
