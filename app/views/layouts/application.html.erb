@@ -12,12 +12,12 @@
   <body>
 
       <div class="bg-slider">
-
+   
         
           <header>
             <div class="container">
-                <%= link_to root_path do %>
-                  <%= image_tag 'logo.png' %>
+                <%= link_to root_path, class: "logo" do %>
+                  <%= image_tag 'logo.png', class: "logo" %>
                 <% end %>
               <ul class="nav navbar-nav navbar-right ">
                 <% if admin_signed_in? %>
@@ -36,7 +36,7 @@
                   <li><%= link_to ' 新規登録', new_member_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
                   <li><%= link_to ' ログイン', new_member_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
                 <% end %>
-              <ul class="nav navbar-nav navbar-right ">
+             </ul>
             <div>
           </header>
 
@@ -48,7 +48,7 @@
            
 
       </div>
-
+      
       <footer class="scroll-fade">
           <div id="footer">
             <p class="footer-text">店舗情報</p>
@@ -56,9 +56,9 @@
             <p class="footer-text">〒000-00000 東京都 TEL：000-0000-0000</p>
             <p class="footer-text">平日 11:00～19:00／土日祝日 9:00～19:00 月曜定休（月曜祝日の場合は翌日休み)</p> 
             <p class="footer-text">こちらのサイトからのご注文は24時間受け付けております</p> 
-          </div>
+           </div>
       </footer>
-
+     
   </body>
 </html>
 
