@@ -19,16 +19,18 @@
 <h2>商品詳細</h2>
 <!-- form_for部分 -->
 <%= form_for @cart, url:carts_path, method: :post do |f| %>
-
+<div class="item">
 <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
+</div>
 
-
+<br>
   <strong>商品名：</strong>
   <%= @item.name %>
+ <br>
 
   <strong>商品説明：</strong>
   <%= @item.explanation %>
-
+<br>
 
   <strong>税込価格：</strong>
    <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
