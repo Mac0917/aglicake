@@ -8,40 +8,45 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(current_member.id)
-    @orders = current_member.cart
+    @orders = current_member.carts
   end
 
   def new
     @order = Order.new
+    @cartitems = current_member.carts
   end
 
   # 購入確認page
   def purchase
     # newのフォームで送れてきた情報を表示したい
-    @order = Order.new(order_params)
-
-    if @order.valid?
-
-    else
-      render :new
+    session[:order] = Order.new
+       session[:order][:payment_methods] = params[:order][:payment_methods]
+    if params[:order][:delivery_select] == "2" 
+       session[:order][:post_number] = current_member.post_number
+       session[:order][:delivery_address] = current_member.address
+       session[:order][:delivery_name] = current_member.last_name + current_member.first_name
+    elsif params[:order][:delivery_select] == "3"
+      address = ShippingAddress.find(params[:order][:register_address])
+      session[:order][:delivery_address] = address.delively_address
+      session[:order][:post_number] = address.post_number
+      session[:order][:delivery_name] = address.delively_name
+    elsif params[:order][:delivery_select] == "4"
+      session[:order][:delivery_address] = params[:order][:delivery_address] 
+      session[:order][:post_number] = params[:order][:post_number]
+      session[:order][:delivery_name] = params[:order][:delivery_name]
     end
-
-   @cratitems = current_member.carts
+    @cartitems = current_member.carts
     @sum = 0
     current_member.carts.each do |cart|
-      @sum = cart.quantity * cart.excluded
+      @sum =  ((cart.quantity * cart.item.excluded) * 1.1).floor 
     end
-    @delivery_price = 800
-    @total_price = (@delivery_price + @sum) * BigDecimal("1.1").floor 
-
-    #current_member.cart_items_total_amount
-    # =>1000
-    #current_member.billing_total_amount
-    # => 1800  ((cart_items_total_amount +  delivery_price) *tax )
-  end
+    session[:order][:delivery_price] = 800
+    session[:order][:total_price] = 800 + @sum
+    session[:order][:status] = 0
+  end
 
   def create
-    @order = Order.new(order_params) 
+    @order = Order.new(session[:order]) 
 		@order.member_id = current_member.id
     @member = current_member
     if @order.save #入力されたデータをdbに保存する。
