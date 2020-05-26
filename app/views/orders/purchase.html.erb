@@ -1,6 +1,6 @@
       <div class="container">
       <div class="row">
-      <div class="oreder-info"><h2>注文情報確認</h2></div>
+      <div class="oreder-info"><h2><strong>注文情報確認</strong></h2></div>
       <div class="linehight">
       </div>
 
@@ -9,53 +9,58 @@
       <thead>
         <tr>
           <th>商品名</th>
+          <th></th>
           <th>単価（税込）</th>
+          <th></th>
           <th>数量</th>
+          <th></th>
+          <th></th>
            <th>小計</th>
            <th></th>
             </tr>
-          </thead>
-         <tbody>
-         <% price_all = 0 %>
-        <% @cartitems.each do |cartitem| %>
-        <tr>
-        <th><%=cartitem.item.item_id%></th>
+            </thead>
+            <tbody>
+            <% price_all = 0 %>
+            <% @cartitems.each do |cartitem| %>
+            <tr>
+            <th><%=cartitem.item.name%></th>
+            <th></th>
           <th><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</th>
-          <th><%=cartitem.item.quantity%></th>
-           <th><%=cartitem.item.excluded%></th>
+          <th></th>
+          <th><%=cartitem.quantity%></th>
+          <th></th>
+           <th><%= @sum %></th>
            <th></th>
            <% end %>
-           <th>送料<%= @delivery_price %></th>
-           <th>商品合計<%= @sum%></th>
-           <th>請求金額<%= @total_price%></th>
-          </tr>
+           </tr>
+           <tr>
+           <th>送料<%= session[:order][:delivery_price] %></th>
+           </tr>
+           <tr>
+           <th>商品合計<%= @sum %></th>
+           </tr>
+           <tr>
+           <th><h4>請求金額<%= session[:order][:total_price] %></h4></th>
+           </tr>
            </tbody>
-
            </table>
-
-          <div class="payment">
-          <h2>支払方法</h2>
-          <% @order.payment_methods%>
+          <div class="payment"><br>
+          <h2><strong>支払方法</strong></h2>
+          <h3><%= session[:order][:payment_methods] %></h3>
           </div>
 
-          <div class="address">
-          <h2>お届け先</h2>
-          <% current_member.shipping_addresses.post_number%>　<%= current_member.shipping_addresses.delively_address%>　<%= current_member.last_name%>　<%= current_member.first_name%>
+          <div class="address"><br>
+          <h2><strong>お届け先</strong></h2>
+          <h3><%= session[:order][:delivery_address] %>　<%=session[:order][:delivery_name]%></h3>
           </div>
 
-          <div class="actions">
-          <%= link_to '購入を確定する',orders_thanks_path %>
+        <div class="actions"><br>
+        <%= link_to '購入を確定する',orders_path, method: :post %>
          </div>
 
          </div>
          </div>
 
-         <%= form_with model: @order do |f| %>
-         <%= f.hidden_field :payment_methods, value: @order.payment_methods %>
-         <%= f.hidden_field :payment_methods, value: @order.delivery_address %>
-         <%= f.submit '購入を確定する'%>
-         <% end %>
-
          </div>
          </div>
          </div>

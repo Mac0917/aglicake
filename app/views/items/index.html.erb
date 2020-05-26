@@ -1,39 +1,50 @@
+
 <div class='container'>
 <%= notice %>
 
 
-<div class='col-md-6 col-md-offset-3'>
 
-<h2>ジャンル検索</h2>
+<div class='row'>
+<div class='col-xs-3'>
+<table class='table'>
+<tr><h2>ジャンル検索</h2></tr>
 <% @genres.each do |a| %>
 
-<%= link_to a.name , items_path(genre_id: a.id) %>
+<tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
 <% end %>
+</table>
+</div>
 
+<div class='col-md-6'>
 <h1><%= @genre.name %>一覧</h1>
-      <table>
-        <tr>
-          <th></th>
 
-          <th>商品名</th>
-          <th>税抜価格</th>
-        </tr>
+    <% @items.each do |item| %>
+      <% if item.genre.status == "有効" && item.status == "販売中" %>
 
-        <% @items.each do |item| %>
-           <% if item.genre.status == "有効" && item.status == "販売中" %>
+     <table class='item'>
+      <thead>
+       <%= attachment_image_tag item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+      </thead>
+    </table>
+    <table class='item'>
+      <tbody>
 
-          <tr>
-            <td><%= attachment_image_tag item, :item_image,format: 'jpeg', size: "100x100" %></td>
-            <td><%= link_to item.name, item_path(item.id) %></td>
-            <td>¥<%= item.excluded %></td>
+       <%= link_to item.name, item_path(item.id) %>
+       <br>
 
-          </tr>
+        ¥<%= item.excluded %>
+      </tbody>
+      </table>
+
         <% end %>
 
         <% end %>
 
 
 </table>
+
+
+</div>
 </div>
 </div>
 

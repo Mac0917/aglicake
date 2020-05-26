@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   def show
       @item = Item.find(params[:id])
       @genre = @item.genre
+      @genres = Genre.where(status: "有効")
       @cart = Cart.new
   end
 

@@ -1,38 +1,40 @@
 <div class='container'>
 
-<div class='col-md-6 col-md-offset-3'>
 
+
+	<div class='row'>
+<div class='col-xs-3'>
+<table class='table'>
+<tr><h2>ジャンル検索</h2></tr>
+<% @genres.each do |a| %>
+
+<tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+<% end %>
+</table>
+</div>
+
+<div class='col-md-6 '>
 
 <%= notice %>
 <h2>商品詳細</h2>
 <!-- form_for部分 -->
 <%= form_for @cart, url:carts_path, method: :post do |f| %>
 
-<tr><%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %></tr>
+<%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
 
-<p>
+
   <strong>商品名：</strong>
   <%= @item.name %>
-</p>
 
-<p>
   <strong>商品説明：</strong>
   <%= @item.explanation %>
-</p>
-<p>
-  <strong>ジャンル：</strong>
-  <%= @genre.name %>
-</p>
 
-<p>
+
   <strong>税込価格：</strong>
    <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
 
-</p>
 <%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
-<p>
     <%= f.hidden_field :item_id, :value => @item.id %>
-</p>
 
 <%= f.submit 'カートに入れる' %>
 <% end %>
