@@ -29,7 +29,7 @@
           <th></th>
           <th><%=cartitem.quantity%></th>
           <th></th>
-           <th><%= @sum %></th>
+           <th><%= ((cartitem.quantity * cartitem.item.excluded) * 1.1).floor %></th>
            <th></th>
            <% end %>
            </tr>
@@ -51,7 +51,7 @@
 
           <div class="address"><br>
           <h2><strong>お届け先</strong></h2>
-          <h3><%= session[:order][:delivery_address] %>　<%=session[:order][:delivery_name]%></h3>
+          <h3><%= session[:order][:delivery_address] %> <%=session[:order][:delivery_name]%></h3>
           </div>
 
         <div class="actions"><br>
@@ -64,3 +64,4 @@
          </div>
          </div>
          </div>
+        

@@ -6,7 +6,6 @@
 
 <h2>ジャンル検索</h2>
 <% @genres.each do |a| %>
-
 <%= link_to a.name , items_path(genre_id: a.id) %>
 <% end %>
 
@@ -20,16 +19,14 @@
         </tr>
 
         <% @items.each do |item| %>
-           <% if item.genre.status == "有効" && item.status == "販売中" %>
+          <% if item.genre.status == "有効" && item.status == "販売中" %>
 
           <tr>
-            <td><%= attachment_image_tag item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></td>
+            <td><%= attachment_image_tag item, :item_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %></td>
             <td><%= link_to item.name, item_path(item.id) %></td>
-            <td>¥<%= item.excluded %></td>
-
+            <td><%= item.excluded %></td>
           </tr>
         <% end %>
-
         <% end %>
 
 
