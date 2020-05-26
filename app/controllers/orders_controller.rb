@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     @cartitems = current_member.carts
     @sum = 0
     current_member.carts.each do |cart|
-      @sum =  ((cart.quantity * cart.item.excluded) * 1.1).floor 
+      @sum += ((cart.quantity * cart.item.excluded) * 1.1).floor 
     end
     session[:order][:delivery_price] = 800
     session[:order][:total_price] = 800 + @sum
@@ -59,7 +59,6 @@ class OrdersController < ApplicationController
         @order_item.quantity = cart.quantity
         @order_item.price = cart.excluded
         @order_item.save
-
       end
       redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
   	else

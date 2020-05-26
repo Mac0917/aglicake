@@ -11,8 +11,7 @@ class Admins::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @item_total_sum = 0
     @order.order_items.each do |order_item|
-      @item_sum = order_item.quantity * order_item.price.to_i
-    
+      @item_total_sum += (order_item.quantity * order_item.item.excluded * 1.1).floor
     end
   end
 
