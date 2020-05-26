@@ -1,7 +1,7 @@
 
 <div class="container">
 <div class="row-order">
-<div class="order-info">注文情報入力</div>
+<div class="order-info"><strong>注文情報入力</strong></div>
 
 <%= form_with( model: @order, url: {action:'purchase'}, local: true ) do |f| %>
 
@@ -14,8 +14,9 @@
   <% end %>
   </div>
 
-<h2><strong>支払方法</strong></h2>
-<div class="payment">
+<div class="payment_title">
+<h3><strong>支払方法</strong></h3></div>
+<div class="payment2">
 <%= f.radio_button :payment_methods, 'credit' %>
 <%= f.label :payment_methods, 'クレジットカード', value: 'credit' %><br>
 <%= f.radio_button :payment_methods, 'bank' %>
@@ -25,7 +26,8 @@
 
 
 <div class="delivery_address">
-<h2><strong>お届け先</strong></h2>
+<div class=delivery_address_title>
+<h3><strong>お届け先</strong></h3></div>
   <div class="address_field">
   <%= f.radio_button :delivery_select, '2' %>
   <%= f.label :delivery_select, 'ご自身の住所', value: 2 %><br>
@@ -44,11 +46,11 @@
   <%= f.label :delivery_select, '新しいお届け先', value: 4 %>
   <br>
   <%= f.label :郵便番号（ハイフンなし）%><br>
-  <%= f.text_field :post_number, autofocus: true, class: "delivery_address", size:"40:20" %><br>  
+  <%= f.text_field :post_number, autofocus: true, class: "delivery_address", size:"25:20" %><br>  
   <%= f.label :住所 %><br>
-  <%= f.text_field :delivery_address, autofocus: true, class: "delivery_address", size:"70:20" %><br>
+  <%= f.text_field :delivery_address, autofocus: true, class: "delivery_address", size:"55:20" %><br>
   <%= f.label :宛名 %><br>
-  <%= f.text_field :delivery_name, autofocus: true, class: "delivery_name", size:"40:20" %><br>
+  <%= f.text_field :delivery_name, autofocus: true, class: "delivery_name", size:"25:20" %><br>
   </div>
 
   <div class="submitbtn"><br>

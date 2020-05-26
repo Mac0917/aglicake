@@ -15,19 +15,121 @@
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";    
-
-.body2{
-  background-color: sandybrown;
-}
-  .contain{
-    margin-top: 60px;
-  }
-
-  .linehight{
-    margin-bottom: 50px;
-    margin-left: 50px;
-  }
   
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .animation {
+    animation: fadeIn 2s ease 0s 1 normal;
+    -webkit-animation: fadeIn 6s ease 0s 1 normal;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+    
+  .bg-slider {
+    width: 100vw;
+    height: 100vh;
+    background-position:center center;
+    background-size: cover;
+    justify-content: center;
+  }
+
+  .text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .text-special {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 80px;
+  }
+
+  header {
+    position: static;
+    width: 100%; 
+  }
+
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  
+  
+ a.glyphicon:hover {
+    color: red;
+ }
+ 
+  #footer {
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .image1 {
+    background-image: url(test1.jpg);
+    }
+
+  .image2 {
+    background-image: url(test2.jpg);
+    }
+
+  .image3 {
+    background-image: url(test3.jpg);
+    }
+    .image4 {
+    background-image: url(test4.jpg);
+    }
+    .image5 {
+    background-image: url(test5.jpg);
+    }
+    
+    #container{
+      height: 500px;
+      width: 100%;
+    }
+
+    #photo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      text-align: left;
+      overflow: hidden;
+      position: relative;
+  }
+  #photo img {
+      top: 100;
+      left: 600;
+      position: absolute;
+  }
+
+
+
+  
+
+
+
+
+
+
+
+
   .adminform{
     margin-right: 100px;
   }
@@ -58,17 +160,9 @@
   .row2{
     margin-top: 170px;
   }
-
-  .row-order{
-    margin-top: 100px;
-  }
   
   .title{
     color: white;
-  }
-
-  .col-box{
-    
   }
   
   .clearfix::after{
@@ -76,6 +170,7 @@
     clear: both;
     display: block;
     }
+
   .col-title{
     padding-top: 30px;
   }
@@ -152,27 +247,58 @@
 }
 
 .order-info{
-  padding-left: 100px;
-  color: darkgrey;
-  padding-bottom: 25px;
+  padding-left: 150px;
+  padding-bottom: 10px;
   font-size: 35px;
-  background-color: black;
-  line-height: 50px;
-
+  line-height: 20px;
+  font-style: italic;
 }
 .payment{
-  margin-left: 68px;
+  margin-right: 300px;
   padding-top: 10px;
-  font-size: 18px;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.address{
+font-style: italic;
+}
+.delivery_address_title{
+  font-style: italic;
+}
+.payment_title{
+  font-style: italic;
+}
+
+.actions{
+  margin-left: 80px;
+}
+.payment2{
+  margin-left: 68px;
+  padding-top: 12px;
+  font-size: 16px;
 }
 .address_field{
   margin-left: 68px;
-  padding-top: 15px;
-  font-size: 18px;
+  padding-top: 12px;
+  font-size: 16px;
 }
-.order-detail{
-  
-}
+
 .submitbtn{
   margin-left: 500px;
+}
+
+.order-detail{
+  margin-left: 900px;
+  line-height: 20px;
+  font-style: italic;
+  font-size: 30px;
+}
+.order-detail-1{
+font-style: italic;
+font-size: 20px;
+}
+
+th{
+  padding: 10px 20px 20px 0;
 }

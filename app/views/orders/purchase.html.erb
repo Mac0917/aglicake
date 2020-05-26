@@ -1,69 +1,60 @@
 
       <div class="container">
       <div class="row-order">
-      <div class="oreder-info">
-      <h2><strong>注文情報確認</strong></h2></div>
+      <div class="order-info">
+      <h2><strong>注文情報確認</strong></h2>
+      </div>
 
-      <div class='col-md-5 col-md-offset-3'>
-      <table>
+      <div class='col-lg-5 col-md-offset-3'>
+      <table border="1" width="580" cellspacing="0" cellpadding="5" bordercolor="#333333" >
       <thead>
         <tr>
-        <th><h4>商品名</h4></th>
-        <th></th>
-        <th><h4>単価(税込)</h4></th>
-        <th></th>
-        <th></th>
-        <th><h4>数量</h4></th>
-        <th></th>
-        <th><h4>小計</h4></th>
-        <th></th>
-        <th></th>
+        <h4><th bgcolor="#D87093">商品名</th></h4>
+        <h4><th bgcolor="#D87093">単価(税込)</th></h4>
+        <h4><th bgcolor="#D87093">数量</th></h4>
+        <h4><th bgcolor="#D87093">小計</th></h4>
         </tr>
         </thead>
+        <div class="order-detail-1">
          <tbody>
          <% price_all = 0 %>
          <% @cartitems.each do |cartitem| %>
          <tr>
-         <th><%=cartitem.item.name%></th>
-         <th></th>
-         <th><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</th>
-         <th></th>
-         <th><%=cartitem.quantity%></th>
-         <th></th>
-         <th><%= @sum %></th>
-         <th></th>
+         <th  bgcolor="#DCDCDC"><h4><strong><%=cartitem.item.name%></strong></h4></th>
+         <th  bgcolor="#DCDCDC"><h4><strong><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</strong></h4></th>
+         <th  bgcolor="#DCDCDC"><h4><strong><%=cartitem.quantity%></strong></h4></th>
+         <th  bgcolor="#DCDCDC"><h4><strong><%= @sum %></strong></h4></th>
          <% end %>
          </tr>
-         </thead>
+         </tbody>
          </table>
          </div>
 
          <div class="order-detail">
-         <table>
+         <table border="1" width="170" height="30" cellspacing="0" cellpadding="5" bordercolor="#333333">
          <tbody>
          <tr>
-         <th><h4>送料<%= session[:order][:delivery_price] %></h4></th>
+         <th bgcolor="#87CEFA"><h4><strong>送料　¥<%= session[:order][:delivery_price] %></strong></h4></th>
          </tr>
          <tr>
-         <th><h4>商品合計<%= @sum %></h4></th>
+         <th bgcolor="#87CEFA"><h4><strong>商品合計　¥<%= @sum %></strong></h4></th>
          </tr>
          <tr>
-         <th><h4>請求金額<%= session[:order][:total_price] %></h4></th>
+         <th bgcolor="#87CEFA"><h4><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h4></th>
          </tr>
          </tbody>
          </table>
-         <div>
+         </div>
+         </div>
 
 
-          <div class="payment2"><br>
+          <div class="payment"><br>
           <table>
            <tr>
-          <th><h3><strong>支払方法</strong></h3><th>
+          <td><h3><strong>支払方法</strong></h3><td>
           </tr>
-          <th></th>
-          <th></th>
           <tr>
-          <th><h3><%= session[:order][:payment_methods] %></h3></th>
+          <td><h3><%= session[:order][:payment_methods] %></h3></td>
           </tr>
           </table>
           </div>
@@ -73,8 +64,6 @@
            <tr>
           <th><h3><strong>お届け先</strong></h3></th>
           </tr>
-          <th></th>
-          <th></th>
           <tr>
           <td><h3><%= session[:order][:post_number] %>　<%= session[:order][:delivery_address] %>　<%=session[:order][:delivery_name]%></h3></td>
           </tr>
@@ -82,9 +71,8 @@
           </div>
 
         <div class="actions"><br>
-        <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-4 col-xs-offset-4", method: :post %>
+        <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", method: :post %>
          </div>
 
-         </div>
          </div>
          </div>
