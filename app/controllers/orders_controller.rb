@@ -61,6 +61,7 @@ class OrdersController < ApplicationController
         @order_item.save
       end
       redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
+      Cart.destroy_all
   	else
   		render 'new'
   	end
