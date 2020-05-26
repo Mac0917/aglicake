@@ -15,8 +15,118 @@
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";    
+  
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .animation {
+    animation: fadeIn 2s ease 0s 1 normal;
+    -webkit-animation: fadeIn 6s ease 0s 1 normal;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+    
+  .bg-slider {
+    width: 100vw;
+    height: 100vh;
+    background-position:center center;
+    background-size: cover;
+    
+    justify-content: center;
+  }
+
+  .text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .text-special {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 80px;
+  }
+
+  header {
+    position: static;
+    width: 100%; 
+  }
+
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  
+  
+ a.glyphicon:hover {
+    color: red;
+ }
+ 
+
+  #footer {
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .image1 {
+    background-image: url(test1.jpg);
+    }
+
+  .image2 {
+    background-image: url(test2.jpg);
+    }
+
+  .image3 {
+    background-image: url(test3.jpg);
+    }
+    .image4 {
+    background-image: url(test4.jpg);
+    }
+    .image5 {
+    background-image: url(test5.jpg);
+    }
+    
+    #container{
+      height: 500px;
+      width: 100%;
+    }
+
+    #photo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      text-align: left;
+      overflow: hidden;
+      position: relative;
+  }
+  #photo img {
+      top: 100;
+      left: 600;
+      position: absolute;
+  }
 
 
+  
+
+
+
+  
   .contain{
     margin-top: 70px;
   }
