@@ -51,9 +51,18 @@ class OrdersController < ApplicationController
     @member = current_member
     if @order.save #入力されたデータをdbに保存する。
       flash[:notice] = "注文情報をを登録しました"
-  		redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
+      current_member.carts.each do |cart|
+       @order_item = OrderItem.new
+       @order_item.item_id = cart.item_id
+       @order_item.order_id = @order.id
+       @order_item.status = 0
+       @order_item.quantity = cart.quantity
+       @order_item.price = cart.excluded
+    end
+      redirect_to orders_thanks_path, notice: "お客様の御注文を承りました！"#保存された場合の移動先を指定。
+      Cart.destroy_all
   	else
-  		render 'new'
+  	render 'new'
   	end
   end
 

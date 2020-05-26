@@ -1,15 +1,23 @@
-<body>
+
 <div class="container">
-<div class="row">
-<div class="oreder-info"><h2>注文情報入力</h2></div>
+<div class="row-order">
+<div class="order-info">注文情報入力</div>
 
 <%= form_with( model: @order, url: {action:'purchase'}, local: true ) do |f| %>
 
+  <div class="errorsbar">
+  <% if @order.errors.any? %>
+  <h2><%= @order.errors.count %><strong>件エラー発生 こちらの注文は以下の理由により確定できませんでした。</strong></h2>
+  <%= @order.errors.full_messages.each do |msg|%><br>
+  <%= msg %>
+  <% end %>
+  <% end %>
+  </div>
+
+<h2><strong>支払方法</strong></h2>
 <div class="payment">
 <%= f.radio_button :payment_methods, 'credit' %>
 <%= f.label :payment_methods, 'クレジットカード', value: 'credit' %><br>
-<div class="linehight"><br>
-</div>
 <%= f.radio_button :payment_methods, 'bank' %>
 <%= f.label :payment_methods, '銀行振込', value: 'bank' %>
 
@@ -17,7 +25,7 @@
 
 
 <div class="delivery_address">
-<h2>お届け先</h2>
+<h2><strong>お届け先</strong></h2>
   <div class="address_field">
   <%= f.radio_button :delivery_select, '2' %>
   <%= f.label :delivery_select, 'ご自身の住所', value: 2 %><br>
@@ -25,46 +33,30 @@
   <%=current_member.last_name%>　<%=current_member.first_name%>
   </div>
 
-<div class="linehight">
-</div>
-
   <div class="address_field"><br>
   <%= f.radio_button :delivery_select, '3' %>
   <%= f.label :delivery_select, '登録済住所から選択', value: 3 %><br>
-   <%= f.collection_select(:register_address, current_member.shipping_addresses, :id, :view_name) %><br>
+  <%= f.collection_select(:register_address, current_member.shipping_addresses, :id, :view_name) %><br>
   </div><br>
-
+  
   <div class="address_field"><br>
-   <div class="errorsbar">
-        <% if @order.errors.any? %>
-          <h2><%= @order.errors.count %><strong>errors prohibited this order from being saved:</strong></h2>
-          <%= @order.errors.full_messages.each do |msg|%><br>
-            <%= msg %>
-          <% end %>
-        <% end %>
-        </div>
   <%= f.radio_button :delivery_select, '4' %>
   <%= f.label :delivery_select, '新しいお届け先', value: 4 %>
   <br>
-      <%= f.label :郵便番号（ハイフンなし） %><br />
-    <%= f.text_field :post_number, autofocus: true, class: "delivery_address", size:"40:20" %><br>
+  <%= f.label :郵便番号（ハイフンなし）%><br>
+  <%= f.text_field :post_number, autofocus: true, class: "delivery_address", size:"40:20" %><br>  
+  <%= f.label :住所 %><br>
+  <%= f.text_field :delivery_address, autofocus: true, class: "delivery_address", size:"70:20" %><br>
+  <%= f.label :宛名 %><br>
+  <%= f.text_field :delivery_name, autofocus: true, class: "delivery_name", size:"40:20" %><br>
+  </div>
 
-      <%= f.label :住所 %><br />
-    <%= f.text_field :delivery_address, autofocus: true, class: "delivery_address", size:"40:20" %><br>
-
-      <%= f.label :宛名 %><br />
-    <%= f.text_field :delivery_name, autofocus: true, class: "delivery_name", size:"40:20" %><br>
-    </div>
-
-<div class="linehight"><br>
-</div>
+  <div class="submitbtn"><br>
   <%= f.submit '確定画面に進む',class: "btn btn-primary "%>
-  
+  </div>
 <% end %>
 
 
 </div>
 </div>
 </div>
-
-<body>

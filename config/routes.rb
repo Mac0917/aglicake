@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   get 'orders/thanks'
   resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   post 'orders/purchase'
-  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   root "home#top"
   get "admins/top" => "admins/members#top", as: "admins_top"
 end

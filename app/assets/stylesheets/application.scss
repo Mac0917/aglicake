@@ -16,9 +16,11 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";    
 
-
+.body2{
+  background-color: sandybrown;
+}
   .contain{
-    margin-top: 70px;
+    margin-top: 60px;
   }
 
   .linehight{
@@ -56,13 +58,17 @@
   .row2{
     margin-top: 170px;
   }
+
+  .row-order{
+    margin-top: 100px;
+  }
   
   .title{
     color: white;
   }
 
   .col-box{
-    padding-top: 30px;
+    
   }
   
   .clearfix::after{
@@ -70,6 +76,9 @@
     clear: both;
     display: block;
     }
+  .col-title{
+    padding-top: 30px;
+  }
   
   
   .box1 {
@@ -137,3 +146,33 @@
     margin-left: 200px;
   }
 
+.table-box{
+  border: 3px solid;
+  padding: 10px;
+}
+
+.order-info{
+  padding-left: 100px;
+  color: darkgrey;
+  padding-bottom: 25px;
+  font-size: 35px;
+  background-color: black;
+  line-height: 50px;
+
+}
+.payment{
+  margin-left: 68px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+.address_field{
+  margin-left: 68px;
+  padding-top: 15px;
+  font-size: 18px;
+}
+.order-detail{
+  
+}
+.submitbtn{
+  margin-left: 500px;
+}
