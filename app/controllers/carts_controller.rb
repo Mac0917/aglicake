@@ -18,8 +18,9 @@ class CartsController < ApplicationController
         else
             @cart = current_member.carts.new(cart_params)
              @cart.save!
+             flash[:success] = 'カートに商品を追加しました'
          end
-                flash[:success] = 'カートに商品を追加しました'
+
                 redirect_back(fallback_location: root_path)
     end
 

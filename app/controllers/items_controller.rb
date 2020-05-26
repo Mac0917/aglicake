@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_member!
-  
   def index
       @items = Item.page(params[:page]).reverse_order
       @genres = Genre.where(status: "有効")
