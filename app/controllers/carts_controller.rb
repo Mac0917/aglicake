@@ -9,18 +9,14 @@ class CartsController < ApplicationController
         @cart = current_member.carts.new(cart_params)
         cart_item = current_member.carts.find_by(item_id: params[:cart][:item_id])
         if cart_item
-
-
-                 cart_item.quantity += params[:cart][:quantity].to_i
-                 cart_item.save!
-
-
+            cart_item.quantity += params[:cart][:quantity].to_i
+            cart_item.save!
         else
             @cart = current_member.carts.new(cart_params)
-             @cart.save!
-         end
-                flash[:success] = 'カートに商品を追加しました'
-                redirect_back(fallback_location: root_path)
+            @cart.save!
+        end
+        flash[:success] = 'カートに商品を追加しました'
+        redirect_back(fallback_location: root_path)
     end
 
     def update
@@ -48,11 +44,9 @@ class CartsController < ApplicationController
 
     end
 
-        private
-          def cart_params
+    private
+        def cart_params
             params.require(:cart).permit(:item_id, :quantity)
-          end
-
-
+        end
 end
 
