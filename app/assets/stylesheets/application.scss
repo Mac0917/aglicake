@@ -76,8 +76,17 @@
     text-decoration: none;
     background-color: transparent;
   }
-
   
+  /* 結構便利 */
+  .back {
+    height: 100vh;
+    margin-top: -20px;
+  }
+  
+
+  .back_image {
+    background-color: red;
+  }
   
  a.glyphicon:hover {
     color: red;
