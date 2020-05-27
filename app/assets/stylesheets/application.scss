@@ -103,6 +103,10 @@
     width: 100%; 
     margin-bottom: 100px;
   }
+  
+  .head_container {
+   padding-left: 700px;
+  }
 
   .flash_message {
     position: absolute;
@@ -111,8 +115,8 @@
   }
   
   .select_icon {
-    margin-left: 720px;
-    margin-top: 30px;
+    margin-left: 520px;
+    padding-top: 30px;
   }
 
   .special_icon {
@@ -224,6 +228,21 @@
   /* ここまで配送index edit */ 
  
 
+  /* ここから管理者ログイン画面 */ 
+  .admin_log {
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+
+  .admin_table {
+    margin-left: 160px;
+  }
+
+  .admin_btn {
+    margin-left: 400px;
+    margin-top: 60px;
+  }
+  /* ここまで管理者ログイン画面 */ 
 
 
 
@@ -246,3 +265,4 @@
 .cart-amount-migi {
   text-align: right;
 }
+
