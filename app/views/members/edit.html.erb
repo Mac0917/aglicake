@@ -1,3 +1,5 @@
+<div class="back">
+<%= render "layouts/header" %>
 <h1>登録情報編集</h1>
 <%= render "layouts/error_messages", member: @member %>
 <%= form_for(@member) do |f| %>
@@ -46,3 +48,4 @@
   </div>
 <% end %>
 <%= link_to "退会する", "/members/status" %>
+</div>
