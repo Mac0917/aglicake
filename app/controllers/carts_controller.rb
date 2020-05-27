@@ -17,7 +17,7 @@ class CartsController < ApplicationController
              flash[:success] = 'カートに商品を追加しました'
          end
 
-                redirect_back(fallback_location: root_path)
+                redirect_to carts_path
     end
 
     def update
