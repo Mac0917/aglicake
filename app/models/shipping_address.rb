@@ -6,4 +6,5 @@ class ShippingAddress < ApplicationRecord
     def view_name
         self.post_number + self.delively_address + self.delively_name
     end
+
 end
