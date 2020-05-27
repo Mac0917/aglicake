@@ -1,12 +1,16 @@
 
+       <div class="back" >
+       <%= render "layouts/header" %>
+
        <div class="container">
        <div class="row-order">
        <div class="order-info">
-       <h2><strong>注文情報確認</strong></h2>
+       <h1><strong>注文情報確認</strong></h1>
        </div>
 
+        <div class=whole_info>
         <div class='col-lg-5 col-md-offset-3'>
-        <table>
+        <table class="table">
         <thead>
         <tr>
         <h3><th>商品名</th></h4>
@@ -31,24 +35,25 @@
          </div>
 
          <div class="order-detail">
-         <table>
+         <table >
          <tbody>
          <tr>
-         <th><h4><strong>送料　¥<%= session[:order][:delivery_price] %></strong></h4></th>
+         <th><h4>送料　¥<%= session[:order][:delivery_price] %></h4></th>
          </tr>
          <tr>
-         <th><h4><strong>商品合計　¥<%= @sum %></strong></h4></th>
+         <th><h4>商品合計　¥<%= @sum %></h4></th>
          </tr>
          <tr>
-         <th><h4><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h4></th>
+         <th><h3><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h3></th>
          </tr>
          </tbody>
          </table>
          </div>
          </div>
+         </div>
 
           <div class="payment"><br>
-          <table>
+          <table class="table">
            <tr>
           <td><h3><strong>支払方法</strong></h3><td>
           </tr>
@@ -58,7 +63,7 @@
           </table>
           </div>
           <div class="address"><br>
-          <table>
+          <table class="table">
           <tr>
           <th><h3><strong>お届け先</strong></h3></th>
           </tr>
@@ -69,7 +74,7 @@
           </div>
 
           <div class="actions"><br>
-          <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", method: :post %>
+          <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", style: 'color:#FFFFFF;', method: :post %>
           </div>
 
           </div>

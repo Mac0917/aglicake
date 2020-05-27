@@ -39,10 +39,12 @@
     
   .bg-slider {
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     background-position:center center;
     background-size: cover;
     justify-content: center;
+    margin-bottom: 0;
+    margin-top: -20px;
   }
 
   .text {
@@ -67,9 +69,24 @@
     height: 100%;
     margin: 0 !important;
     padding: 0 !important;
+    padding-top: 0;
   }
 
+  .logo:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
   
+  /* 結構便利 */
+  .back {
+    height: 100vh;
+    margin-top: -20px;
+  }
+  
+
+  .back_image {
+    background-color: red;
+  }
   
  a.glyphicon:hover {
     color: red;
@@ -80,6 +97,7 @@
     color: #fff;
     text-align: center;
     padding: 30px 0;
+   
   }
 
   .image1 {
@@ -121,12 +139,62 @@
 
 
 
+  /* ここから会員登録画面 */ 
+  .new_member {
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+
+  .session_mem {
+    padding-top: 20px;
+    padding-right: 100px;
+   }
   
+  .session_put {
+    padding-top: 20px;
+   }
+
+  .just1 {
+    margin-left: 35px;
+  }
+
+  .just2 {
+    margin-left: 21px;
+  }
+
+  .new_mem_btn {
+    width: 170px;
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-bottom: 30px;
+  }
+  
+  .login_member {
+    margin-left: 30px;
+  }
+
+  .login_mem {
+    margin-left: 100px;
+  }
+  /* ここまで会員登録画面 */
 
 
 
 
-//adminformからthまでわぎが記載しております！
+
+
+
+
+//adminformからthまでわぎが記載しております！//
+body{
+
+}
+.whole_info{
+  box-sizing: border-box;
+
+  
+}
   .adminform{
     margin-right: 100px;
   }
@@ -170,6 +238,9 @@
 
   .col-title{
     padding-top: 30px;
+  }
+  .admins-toptitle{
+    margin-bottom: 100px;
   }
   
   
@@ -229,13 +300,13 @@
     padding-top: 30px;
   }
   
-  .oerdercount{
-    padding-top: 70px;
+  .ordercount{
+    margin-left: 400px;
   }
   
   .comment{
-    padding-top: 150px;
-    margin-left: 200px;
+    padding-top: 50px;
+    margin-left: 50px;
   }
 
 .table-box{
@@ -249,8 +320,9 @@
   font-size: 35px;
   line-height: 20px;
   font-style: italic;
-  color: whitesmoke;
+  color: saddlebrown;
 }
+
 .payment{
   margin-right: 300px;
   padding-top: 10px;
@@ -296,11 +368,24 @@ position: absolute;
   line-height: 20px;
   font-style: italic;
   font-size: 30px;
+
 }
 .order-detail-1{
 font-style: italic;
 font-size: 20px;
 }
+.bodypaint{
+  font-size: 100px;
+  padding-bottom: 70px;
+  font-style: oblique;
+  color: darkgoldenrod;
+ 
+}
+.bodypaint2{
+  color: darkgoldenrod;
+  padding-bottom: 50px;
+}
+
 
 th{
   padding: 10px 20px 20px 0;

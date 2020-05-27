@@ -1,5 +1,4 @@
-class SerachController < ApplicationController
-  
+class SearchController < ApplicationController
   def search
     if params[:name].present?
       @items = Item.where('name LIKE ?', "%#{params[:name]}%")
@@ -7,5 +6,4 @@ class SerachController < ApplicationController
       @items = Item.none
     end
   end
-  
 end

@@ -6,12 +6,6 @@
 
 <div class='col-md-6 col-md-offset-3'>
 
-<h2>ジャンル検索</h2>
-<% @genres.each do |a| %>
-<%= link_to a.name , items_path(genre_id: a.id) %>
-<% end %>
-
-<h1><%= @genre.name %>一覧</h1>
       <table>
         <tr>
           <th></th>
@@ -36,5 +30,4 @@
 </div>
 </div>
 
-<%= paginate(@items) %>
 </div>

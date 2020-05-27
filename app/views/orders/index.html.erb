@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="row">
+  <h2>注文履歴一覧</h2>
+  <p></p>
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><p>注文日</p></th>
+            <th><p>配送先</p></th>
+            <th><p>注文商品</p></th>
+            <th><p>支払金額</p></th>
+            <th><p>ステータス</p></th>
+            <th><p>注文詳細</p></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+              <td>
+              <%= order.post_number %><br><%= order.delivery_address %><br><%= order.delivery_name %>
+              </td>
+              <td><% order.order_items.each do |order_item| %>
+              <%= order_item.item.name%><br>
+              <%end%></td>
+              <td><%= order.total_price %></td>
+              <td><%= order.status_i18n %></td>
+              <td><%= link_to"表示する", order_path(order.id),class: "btn btn-primary" %>  
+            </tr>
+            <% @item_total_sum = 0 %>
+          <% end %>  
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<%= paginate(@orders) %>
