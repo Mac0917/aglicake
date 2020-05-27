@@ -61,6 +61,7 @@ class Members::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_update_path_for(resource)
+    flash[:notice] = "パスワードを更新しました"
     member_path(resource)
   end
 end

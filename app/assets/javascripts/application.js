@@ -49,7 +49,7 @@ $(function () {
 //背景画像をスライダーにする
 $(function() {
 	$('.bg-slider').bgSwitcher({
-		images: ['/assets/cake9.jpg','/assets/cake7.jpg','/assets/cake8.jpg','/assets/test1.jpg',],   //画像を呼び込むにはこの記述しかない
+		images: ['/assets/cake12.jpg','/assets/cake7.jpg','/assets/cake8.jpg',],   //画像を呼び込むにはこの記述しかない
 		interval: 10000,
 		loop: true,
 		shuffle: true,

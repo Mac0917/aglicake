@@ -21,10 +21,45 @@
     padding: 0px;
     box-sizing: border-box;
   }
+  
+  /* 結構便利 */
+   .back {
+    height: 100vh;
+    margin-top: -20px;
+  }
 
+  .link_new:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: blue;
+  }
+  
+
+  /* ここからapplication.html */
+  .logo:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50px;
+  }
+
+  #footer {
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+  /* ここまでapplication.html */
+
+
+  /* ここからtop */
   .animation {
     animation: fadeIn 2s ease 0s 1 normal;
     -webkit-animation: fadeIn 6s ease 0s 1 normal;
+    color: #fff;
   }
 
   @keyframes fadeIn {
@@ -39,14 +74,14 @@
     
   .bg-slider {
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     background-position:center center;
     background-size: cover;
     justify-content: center;
     margin-bottom: 0;
     margin-top: -20px;
   }
-
+　
   .text {
     color: #fff;
     font-size: 20px;
@@ -59,90 +94,49 @@
     font-weight: bold;
     margin-top: 80px;
   }
+  /* ここまでtop */
 
+
+  /* ここからheader */
   header {
     position: static;
     width: 100%; 
+    margin-bottom: 100px;
   }
 
-  body {
-    height: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    padding-top: 0;
+  .flash_message {
+    position: absolute;
+    left: 600px;
+    top: 40px
+  }
+  
+  .select_icon {
+    margin-left: 720px;
+    margin-top: 30px;
   }
 
-  .logo:hover {
+  .special_icon {
+    list-style-type: none;
+    display:inline;
+    margin-right: 20px;
+  }
+
+  .glyphicon:hover {
     text-decoration: none;
     background-color: transparent;
+    color: cornflowerblue;
   }
-  
-  /* 結構便利 */
-  .back {
-    height: 100vh;
-    margin-top: -20px;
-  }
-  
-
-  .back_image {
-    background-color: red;
-  }
-  
- a.glyphicon:hover {
-    color: red;
- }
- 
-
-  #footer {
-    background-color: #89c7de;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-   
-  }
-
-  .image1 {
-    background-image: url(test1.jpg);
-    }
-
-  .image2 {
-    background-image: url(test2.jpg);
-    }
-
-  .image3 {
-    background-image: url(test3.jpg);
-    }
-    .image4 {
-    background-image: url(test4.jpg);
-    }
-    .image5 {
-    background-image: url(test5.jpg);
-    }
-    
-    #container{
-      height: 500px;
-      width: 100%;
-    }
-
-    #photo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto;
-      text-align: left;
-      overflow: hidden;
-      position: relative;
-  }
-  #photo img {
-      top: 100;
-      left: 600;
-      position: absolute;
-  }
-
+  /* ここまでheader */
 
 
   /* ここから会員登録画面 */ 
-  .new_member {
-    margin-top: 60px;
+  .back_special {
+    background-color: white;
+    margin-top: -20px;
+  }
+
+  .new_members {
+    margin-top: 10px;
     margin-left: 30px;
     margin-bottom: 40px;
   }
@@ -177,131 +171,58 @@
 
   .login_mem {
     margin-left: 100px;
+    margin-bottom: 238px;
+  }
+
+  .field_with_errors {
+    display: contents;
+    @extend .has-error;
   }
   /* ここまで会員登録画面 */
 
 
+  /* ここから会員ログイン */
+  .log_in_btn {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-bottom: 30px;
+  }
+   
+  .pass {
+    margin-left: 300px;
+  }
+
+  .just3 {
+    margin-top: 30px;
+    margin-left: 150px;
+  }
+  /* ここまで会員ログイン */
 
   
-  .contain{
-    margin-top: 70px;
+  /* ここから配送index edit */
+  .shipping {
+     margin-left: 40px;
+     margin-bottom: 20px;
+   }
+   
+  .regstration {
+    margin-left: 30px;
   }
+  .reg_btn {
+     margin-left: 100px;
+     width: 150px;
+   }
 
-  .linehight{
-    margin-bottom: 50px;
-    margin-left: 50px;
-  }
-  
-  .adminform{
-    margin-right: 100px;
-  }
+  .table {
+     margin-top: 80px;
+   }
 
-  .mailfield{
-    margin-right: 60px;
-    padding-bottom: 15px;
-    font-size: larger;
-  }
-
-  .field{
+  .Edit_btn {
     margin-right: 30px;
-    font-size: larger;
-    padding-bottom: 5px;
   }
-  
-  .admins{
-    color: gray;
-    margin-right: 650px;
-  }
-  
-  .row{
-    margin-top: 130px;
-    text-align: center;
-    line-height: 20px;
-  }
-  
-  .row2{
-    margin-top: 170px;
-  }
-  
-  .title{
-    color: white;
-  }
-
-  .col-box{
-    padding-top: 30px;
-  }
-  
-  .clearfix::after{
-    content: "";
-    clear: both;
-    display: block;
-    }
-  
-  
-  .box1 {
-    background-color: #FFFFFF;
-    height: 130px;
-    width: 130px;
-    float: left;
-    margin-left: 50px;
-  }
-  
-  .bg1 {
-      background-color: blue;
-  }
-   
-  .bg2 {
-      background-color: gold;
-  }
-   
-  .bg3 {
-      background-color: lightgreen;
-  }
-   
-  .bg4 {
-      background-color: red;
-  }
-  
-  .main {
-    padding-top: 80px;
-    font-size: 18px;
-    padding-right: 10px;
-  }
-  
-  .osusumetab{
-    font-style: initial;
-    padding-right: 500px;
-    padding-top: 20px;
-  }
-  
-  .inside-box{
-    padding-top: 150px;
-    margin-right: 20px;
-    font-size: 17px;
-  }
-  
-  .footerbox{
-    float: right;
-    padding: 120px  0 200px;
-    padding-left:  50px;
-  }
-  
-  .footer-box{
-  margin-left: 1200px;
-  }
-  
-  .admons-box{
-    padding-top: 30px;
-  }
-  
-  .oerdercount{
-    padding-top: 70px;
-  }
-  
-  .comment{
-    padding-top: 150px;
-    margin-left: 200px;
-  }
+  /* ここまで配送index edit */ 
+ 
 
 
 
