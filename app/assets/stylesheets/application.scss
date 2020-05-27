@@ -126,10 +126,7 @@
 
 
 
-
-
-
-
+//adminformからthまでわぎが記載しております！
   .adminform{
     margin-right: 100px;
   }
@@ -252,16 +249,19 @@
   font-size: 35px;
   line-height: 20px;
   font-style: italic;
+  color: whitesmoke;
 }
 .payment{
   margin-right: 300px;
   padding-top: 10px;
   font-size: 10px;
   font-style: italic;
+  position: relative;
 }
 
 .address{
 font-style: italic;
+position: absolute;
 }
 .delivery_address_title{
   font-style: italic;
@@ -271,7 +271,9 @@ font-style: italic;
 }
 
 .actions{
-  margin-left: 80px;
+  margin-left: 80px;  
+  margin-top: 170px;
+  position: relative;
 }
 .payment2{
   margin-left: 68px;
@@ -289,7 +291,8 @@ font-style: italic;
 }
 
 .order-detail{
-  margin-left: 900px;
+  margin-top: 10px;
+  margin-left: 750px;
   line-height: 20px;
   font-style: italic;
   font-size: 30px;

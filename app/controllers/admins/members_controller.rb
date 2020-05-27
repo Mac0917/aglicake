@@ -26,6 +26,7 @@ class Admins::MembersController < ApplicationController
     end
 
     def top
+        @member = Member.where(created_at: Date.today)
     end
 
     private 

@@ -1,18 +1,18 @@
 
-      <div class="container">
-      <div class="row-order">
-      <div class="order-info">
-      <h2><strong>注文情報確認</strong></h2>
-      </div>
+       <div class="container">
+       <div class="row-order">
+       <div class="order-info">
+       <h2><strong>注文情報確認</strong></h2>
+       </div>
 
-      <div class='col-lg-5 col-md-offset-3'>
-      <table border="1" width="580" cellspacing="0" cellpadding="5" bordercolor="#333333" >
-      <thead>
+        <div class='col-lg-5 col-md-offset-3'>
+        <table>
+        <thead>
         <tr>
-        <h4><th bgcolor="#D87093">商品名</th></h4>
-        <h4><th bgcolor="#D87093">単価(税込)</th></h4>
-        <h4><th bgcolor="#D87093">数量</th></h4>
-        <h4><th bgcolor="#D87093">小計</th></h4>
+        <h3><th>商品名</th></h4>
+        <h4><th>単価(税込)</th></h4>
+        <h4><th>数量</th></h4>
+        <h4><th>小計</th></h4>
         </tr>
         </thead>
         <div class="order-detail-1">
@@ -20,10 +20,10 @@
          <% price_all = 0 %>
          <% @cartitems.each do |cartitem| %>
          <tr>
-         <th  bgcolor="#DCDCDC"><h4><strong><%=cartitem.item.name%></strong></h4></th>
-         <th  bgcolor="#DCDCDC"><h4><strong><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</strong></h4></th>
-         <th  bgcolor="#DCDCDC"><h4><strong><%=cartitem.quantity%></strong></h4></th>
-         <th  bgcolor="#DCDCDC"><h4><strong><%= @sum %></strong></h4></th>
+         <th><h4><strong><%=cartitem.item.name%></strong></h4></th>
+         <th><h4><strong><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</strong></h4></th>
+         <th><h4><strong><%=cartitem.quantity%></strong></h4></th>
+         <th><h4><strong><%= ((cartitem.quantity * cartitem.item.excluded) * 1.1).floor  %></strong></h4></th>
          <% end %>
          </tr>
          </tbody>
@@ -31,22 +31,21 @@
          </div>
 
          <div class="order-detail">
-         <table border="1" width="170" height="30" cellspacing="0" cellpadding="5" bordercolor="#333333">
+         <table>
          <tbody>
          <tr>
-         <th bgcolor="#87CEFA"><h4><strong>送料　¥<%= session[:order][:delivery_price] %></strong></h4></th>
+         <th><h4><strong>送料　¥<%= session[:order][:delivery_price] %></strong></h4></th>
          </tr>
          <tr>
-         <th bgcolor="#87CEFA"><h4><strong>商品合計　¥<%= @sum %></strong></h4></th>
+         <th><h4><strong>商品合計　¥<%= @sum %></strong></h4></th>
          </tr>
          <tr>
-         <th bgcolor="#87CEFA"><h4><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h4></th>
+         <th><h4><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h4></th>
          </tr>
          </tbody>
          </table>
          </div>
          </div>
-
 
           <div class="payment"><br>
           <table>
@@ -58,10 +57,9 @@
           </tr>
           </table>
           </div>
-
           <div class="address"><br>
           <table>
-           <tr>
+          <tr>
           <th><h3><strong>お届け先</strong></h3></th>
           </tr>
           <tr>
@@ -70,9 +68,11 @@
           </table>
           </div>
 
-        <div class="actions"><br>
-        <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", method: :post %>
-         </div>
+          <div class="actions"><br>
+          <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", method: :post %>
+          </div>
 
-         </div>
-         </div>
+          </div>
+          </div>
+          </div>
+        

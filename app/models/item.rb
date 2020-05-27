@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+
+    has_many :order_items
     belongs_to :genre
     belongs_to :order, optional: true
     attachment :item_image

@@ -1,16 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_member!, except: [:top]
 
-  def index
-    @orders = Order.all
-    @oreder = current_order
-  end
-
-  def show
-    @order = Order.find(current_member.id)
-    @orders = current_member.carts
-  end
-
   def new
     @order = Order.new
     @cartitems = current_member.carts
@@ -38,7 +28,7 @@ class OrdersController < ApplicationController
     @cartitems = current_member.carts
     @sum = 0
     current_member.carts.each do |cart|
-      @sum =  ((cart.quantity * cart.item.excluded) * 1.1).floor 
+      @sum += ((cart.quantity * cart.item.excluded) * 1.1).floor 
     end
     session[:order][:delivery_price] = 800
     session[:order][:total_price] = 800 + @sum
@@ -52,23 +42,24 @@ class OrdersController < ApplicationController
     if @order.save #入力されたデータをdbに保存する。
       flash[:notice] = "注文情報をを登録しました"
       current_member.carts.each do |cart|
-       @order_item = OrderItem.new
-       @order_item.item_id = cart.item_id
-       @order_item.order_id = @order.id
-       @order_item.status = 0
-       @order_item.quantity = cart.quantity
-       @order_item.price = cart.excluded
-    end
-      redirect_to orders_thanks_path, notice: "お客様の御注文を承りました！"#保存された場合の移動先を指定。
+        @order_item = OrderItem.new
+        @order_item.item_id = cart.item_id
+        @order_item.order_id = @order.id
+        @order_item.status = 0
+        @order_item.quantity = cart.quantity
+        @order_item.price = cart.excluded
+        @order_item.save
+      end
+      redirect_to orders_thanks_path, notice: "successfully created order!"#保存された場合の移動先を指定。
       Cart.destroy_all
   	else
   	render 'new'
   	end
   end
+  
 
   def thanks
   end
-
 
 
   private

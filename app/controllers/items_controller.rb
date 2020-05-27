@@ -11,12 +11,20 @@ class ItemsController < ApplicationController
         @genre = Genre.find(params[:genre_id])
         @items = Item.where(genre_id: @genre.id).page(params[:page]).reverse_order
       end
-   end
+  end
 
   def show
       @item = Item.find(params[:id])
       @genre = @item.genre
       @cart = Cart.new
+  end
+
+  def search
+    if params[:name].present?
+      @items = Item.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @items = Item.none
+    end
   end
 
   private
