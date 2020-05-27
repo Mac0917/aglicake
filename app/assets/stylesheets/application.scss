@@ -26,7 +26,6 @@
    .back {
     height: 100vh;
     margin-top: -20px;
-    background-color: cyan;
   }
 
   .link_new:hover {
@@ -107,7 +106,6 @@
   
   .head_container {
    padding-left: 700px;
-   padding-top: 3px;
   }
 
   .flash_message {
@@ -118,7 +116,7 @@
   
   .select_icon {
     margin-left: 520px;
-    margin-top: 30px;
+    padding-top: 30px;
   }
 
   .special_icon {
@@ -229,7 +227,8 @@
   }
   /* ここまで配送index edit */ 
  
-   /* ここから管理者ログイン画面 */ 
+
+  /* ここから管理者ログイン画面 */ 
   .admin_log {
     margin-left: 40px;
     margin-bottom: 20px;
@@ -243,3 +242,27 @@
     margin-left: 400px;
     margin-top: 60px;
   }
+  /* ここまで管理者ログイン画面 */ 
+
+
+
+.cart_right {
+  text-align: right;
+}
+
+.h3 .sample {
+  color: red;
+}
+
+.cart-table{
+  table-layout: fixed;
+}
+
+.cart_number_field{
+  width: 50%;
+}
+
+.cart-amount-migi {
+  text-align: right;
+}
+
