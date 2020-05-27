@@ -15,18 +15,5 @@ class Member < ApplicationRecord
   validates :address, presence: { message: "を入力してください" }
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "を入力してください"}
   validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "はハイフンなしで10桁または11桁の数字を入力してください"}
-
-
-  #以下、郵便番号で住所が自動入力されるコードです
-  include JpPrefecture
-  jp_prefecture :post_number
   
-  def prefecture_name
-    JpPrefecture::Prefecture.find(code: post_number).try(:name)
-  end
-  
-  def prefecture_name=(prefecture_name)
-    self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
-  end
-
 end
