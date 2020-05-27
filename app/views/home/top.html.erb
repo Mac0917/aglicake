@@ -1,18 +1,16 @@
-<div class="container">
-    <div class="col-xs-3">
-        <% if flash[:notice] %>
-            <p><%= flash[:notice] %></p>
-        <%end%>
-        <% if alert %>
-            <p><%= alert %></p>
-        <%end%>
-            <h1 class="text animation">ジャンル検索</h1>
-    </div>
-    <div class="col-xs-9 animation">
-        <h1 class="text">ようこそ、Aglicakeへ<br>このサイトは、ケーキ販売のECサイトになります。<br>会員出ない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</h1>
-        <h1 class="text-special">オススメ商品</h2>
-    </div>
-            
-</div>
-<%= link_to "adminのログインへ",  new_admin_session_path %>
+<div class="bg-slider">
+    <%= render "layouts/header" %>
+        <div class="container">
 
+            <div class="col-xs-3">
+                <h1 class="text animation">ジャンル検索</h1>
+            </div>
+
+            <div class="col-xs-9 animation">
+                <h1 class="text">ようこそ、Aglicakeへ<br>このサイトは、ケーキ販売のECサイトになります。<br>会員出ない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</h1>
+                <h1 class="text-special">オススメ商品</h2>
+            </div>
+
+        </div>
+    <%= link_to "adminのログインへ",  new_admin_session_path %>
+</div>
