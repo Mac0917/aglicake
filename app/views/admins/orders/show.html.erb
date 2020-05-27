@@ -1,6 +1,7 @@
+<div class="back">
+<%= render 'layouts/header' %>
 
 <div class="container">
-  <div class="row">
   <h2>注文履歴詳細</h2>
   <p></p>
     <div class="col-md-10">
@@ -26,16 +27,14 @@
             <% end %>
           </td>
         </tr>
-      </table>
+      </table><br/>
     </div>
   </div>
-</div>
 
 
 <div class="container">
-  <div class="row">
     <div class="col-md-7">
-      <table class="table table-hover">
+      <table class="table table-bordered">
         <tr>
           <th>商品名</th>
           <th>単価（税込）</th>
@@ -57,10 +56,8 @@
           </td>
         </tr>
         <% end %>
-      </table> 
+      </table>
     </div>
-
-
     <div class="col-md-3">
       <table class="table table-bordered"><br />
         <tr>

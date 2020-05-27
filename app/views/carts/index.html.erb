@@ -1,17 +1,22 @@
+<div class="back">
+<%= render 'layouts/header' %>
+
 <div class='container'>
 
 <table>
-    <td><h3>ショッピングカート</h3></td>
-    <td><%= link_to 'カートを空にする',  carts_destroy_all_path, class:"btn-sm btn-danger", method: :delete, "data-confirm" => "本当にカートを空にしますか？" %></td>
+  <tr>
+    <h3>ショッピングカート</h3>
+    <p class="cart_right"><%= link_to 'カートを空にする',  carts_destroy_all_path, class:"btn-sm btn-danger", style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当にカートを空にしますか？" %></p>
+  </tr>
 </table>
 
-<table class="table table-bordered">
-  <div class="row-10">
+<table class="table cart-table table-bordered">
     <tr>
       <th>商品名</th>
       <th>単価(税込)</th>
-      <th>数量</th>
+      <th class="cart-amount">数量</th>
       <th>小計</th>
+      <th></th>
     </tr>
       <% price_all = 0 %>
       <%  @carts.each do |cart| %>
@@ -19,11 +24,9 @@
       <td><%= cart.item.name %></td>
       <td><%= (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %></td>
         <%= form_for(cart) do |f| %>
-      <td>
-        <div>
-          <%= f.number_field :quantity %>円
-          <%= f.submit '更新', class: 'btn btn-primary btn-sm' %>
-        </div>
+      <td class="cart-amount">
+          <%= f.number_field :quantity, class:"cart_number_field" %> 個
+          <%= f.submit '更新', class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %>
       </td>
 
         <% end %>
@@ -31,27 +34,25 @@
         <%= syoukei = cart.quantity * (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %>
       </td>
         <% price_all = price_all + syoukei %>
-        <td><%= link_to '削除',  cart_path(cart),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+        <td class="cart-amount-migi"><%= link_to '削除',  cart_path(cart),class:"btn-sm btn-danger",style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
       <% end %>
-  </div>
 </table>
 
 
-<p><%= link_to '買い物を続ける',  items_path, class: 'btn btn-primary btn-sm' %></p>
-
-
-<div class="col-md-3">
-  <table class="table table-bordered"><br />
-    <tr>
-      <th><p>合計金額</p></th>
-      <td><%= price_all %> 円</td>
-    </tr>
-  </table>
+  <div class="col-md-3 pull-left">
+    <p><%= link_to '買い物を続ける',  items_path, class: 'btn btn-primary', style: 'color:#FFFFFF;' %></p>
+  </div>
+  <div class="col-md-3 pull-right">
+    <table class="table table-bordered">
+      <tr>
+        <th><p>合計金額</p></th>
+        <td><%= price_all %> 円</td>
+      </tr>
+    </table>
+  </div>
 </div>
 
+<p class="text-center"><%= link_to '情報入力に進む',  new_order_path, class: 'btn btn-success btn-lg', style: 'color:#FFFFFF;' %></p>
 
-<p class="text-center"><%= link_to '情報入力に進む',  new_order_path, class: 'btn btn-success' %></p>
-
-</div>
 </div>
