@@ -28,6 +28,13 @@
     margin-top: -20px;
   }
 
+  .link_new:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: blue;
+  }
+  
+
   /* ここからapplication.html */
   .logo:hover {
     text-decoration: none;
@@ -99,7 +106,7 @@
 
   .flash_message {
     position: absolute;
-    left: 800px;
+    left: 600px;
     top: 40px
   }
   
@@ -117,6 +124,7 @@
   .glyphicon:hover {
     text-decoration: none;
     background-color: transparent;
+    color: cornflowerblue;
   }
   /* ここまでheader */
 
@@ -192,5 +200,27 @@
   /* ここまで会員ログイン */
 
   
+  /* ここから配送index edit */
+  .shipping {
+     margin-left: 40px;
+     margin-bottom: 20px;
+   }
+   
+  .regstration {
+    margin-left: 30px;
+  }
+  .reg_btn {
+     margin-left: 100px;
+     width: 150px;
+   }
+
+  .table {
+     margin-top: 80px;
+   }
+
+  .Edit_btn {
+    margin-right: 30px;
+  }
+  /* ここまで配送index edit */ 
  
 
