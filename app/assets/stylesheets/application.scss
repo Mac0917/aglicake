@@ -76,12 +76,12 @@
    
  .bg-slider {
    width: 100vw;
-   height: 100vh;
+   height: 101vh;
    background-position:center center;
    background-size: cover;
    justify-content: center;
    margin-bottom: 0;
-   margin-top: -20px;
+   margin-top: -52px;
  }
  .text {
    color: #fff;
@@ -252,6 +252,24 @@ a.glyphicon:hover {
    text-align: right;
  }
 /* ここまで配送index edit */ 
+
+/* ここからメール送信 */
+.send_mail {
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-info {
+  margin-top: 40px;
+}
+
+.pagi {
+  position: absolute;
+  bottom: 230px;
+  left: 1300px;
+}
+
 
 //ここはまつさん部分です。
 .item {

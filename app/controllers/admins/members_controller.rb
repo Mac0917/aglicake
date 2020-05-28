@@ -4,6 +4,7 @@ class Admins::MembersController < ApplicationController
 
     def index
         @members = Member.all
+        @members = Member.page(params[:page]).per(10)
     end
 
     def show

@@ -1,5 +1,5 @@
 <% if member.errors.any? %>
-    <div class="alert">
+    <div>
       <h2><%= pluralize(member.errors.count, "件") %>のエラーにより会員情報を保存できませんでした。</h2>
       <ul class="error" type="disc">
         <% member.errors.full_messages.each do |message| %>
