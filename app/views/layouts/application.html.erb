@@ -7,10 +7,20 @@
     <meta charset="UTF-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--application.jsを読んでいる-->
-    <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
-<!--//はweb上のファイルを呼び込んでいる-->
+
+    <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script> <!--//はweb上のファイルを呼び込んでいる-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
   </head>
   <body>
+          <div class="flash_message">
+            <% if flash[:notice] %>
+                <p><%= flash[:notice] %></p>
+            <%end%>
+            <% if alert %>
+                <p><%= alert %></p>
+            <%end%>
+        </div>
+        
      <%= link_to root_path do %>
                 <%= image_tag 'logo.png', class: "logo" %>
             <% end %>

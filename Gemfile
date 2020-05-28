@@ -90,5 +90,5 @@ gem 'pry-rails'
 #郵便番号で住所も自動で入力
 gem "jp_prefecture"
 
-
+gem 'bxslider-rails'
 

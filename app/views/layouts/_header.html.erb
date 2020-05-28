@@ -1,14 +1,7 @@
 <header>
     <div class="head_container">
         
-        <div class="flash_message">
-            <% if flash[:notice] %>
-                <p><%= flash[:notice] %></p>
-            <%end%>
-            <% if alert %>
-                <p><%= alert %></p>
-            <%end%>
-        </div>
+
         <div class="select_icon">
             <ul>
                 <% if admin_signed_in? %>
