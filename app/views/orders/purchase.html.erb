@@ -1,18 +1,20 @@
 
-       <div class="back" >
        <%= render "layouts/header" %>
+       <div class ="wholescreen">
        <div class="container">
        <div class="row-order">
+
        <div class="order-info">
        <h1><strong>注文情報確認</strong></h1>
        </div>
 
         <div class=whole_info>
-        <div class='col-lg-5 col-md-offset-3'>
+        <div class='col-lg-5 col-md-offset-2'>
         <table class="table">
         <thead>
         <tr>
-        <h3><th>商品名</th></h4>
+        <h4><th>商品写真</th></h4>
+        <h4><th>商品名</th></h4>
         <h4><th>単価(税込)</th></h4>
         <h4><th>数量</th></h4>
         <h4><th>小計</th></h4>
@@ -22,7 +24,9 @@
          <tbody>
          <% price_all = 0 %>
          <% @cartitems.each do |cartitem| %>
+         <% item = Item.find(cartitem.item_id) %>
          <tr>
+         <th><%= attachment_image_tag item,:item_image, format: 'jpeg', fallback: "no_image.jpg", size: "80x70" %></th>
          <th><h4><strong><%=cartitem.item.name%></strong></h4></th>
          <th><h4><strong><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</strong></h4></th>
          <th><h4><strong><%=cartitem.quantity%></strong></h4></th>
@@ -73,7 +77,7 @@
           </div>
 
           <div class="actions"><br>
-          <%= link_to '購入を確定する',orders_path,class: "btn btn-success col-xs-3 col-xs-offset-4", style: 'color:#FFFFFF;', method: :post %>
+          <%= link_to '購入を確定する',orders_path,class: "btn btn-danger col-xs-3 col-xs-offset-4", style: 'color:#FFFFFF;', method: :post %>
           </div>
 
           </div>
