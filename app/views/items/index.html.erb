@@ -1,42 +1,48 @@
 <%= render "layouts/header" %>
-<div class="back">
+
 <div class='container'>
 <%= notice %>
 
 
 
 <div class='row'>
-<div class='col-xs-3'>
-<table class='table'>
-<tr><h2>ジャンル検索</h2></tr>
-<% @genres.each do |a| %>
+<div class='col-md-3'>
+       <div class="top-text box15">
+            <table class='table'>
+              
+            <tr><h2>ジャンル検索</h2></tr>
+            <% @genres.each do |a| %>
 
 
-<tr><td ><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
 
-<% end %>
-</table>
+            <tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+           
+            <% end %>
+            </table>
+            </div>
+        </div>
+
+<div class='col-xs-9 box15'>
+ <div class="text-center ">
+<h1 ><%= @genre.name %>一覧</h1>
 </div>
-
-<div class='col-xs-9 '>
-
-<h1><%= @genre.name %>一覧</h1>
     <div class ='clearfix'>
     <% @items.each do |item| %>
       <% if item.genre.status == "有効" && item.status == "販売中" %>
 
 
-      <div class ='item animation'>
+      <div class ='item animation '>
        <%= attachment_image_tag item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
        <br>
 
 
-
+      <div class="text-center">
        <%= link_to item.name, item_path(item.id) %>
        <br>
 
 
-        ¥<%= item.excluded %>
+       <font color='rgb( 244, 244, 244);'>¥<%= item.excluded %></font>>
+      </div>
       </div>
 
         <% end %>

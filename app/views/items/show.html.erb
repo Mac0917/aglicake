@@ -1,50 +1,56 @@
 <%= render "layouts/header" %>
-<div class="back">
-<div class='container'>
+
+	<div class='container'>
 
 
 
-	<div class='row'>
-<div class='col-xs-3'>
-<table class='table'>
-<tr><h2>ジャンル検索</h2></tr>
-<% @genres.each do |a| %>
-
-<tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
-<% end %>
-</table>
-</div>
-
-<div class='col-md-7'>
-
-<%= notice %>
-<!-- form_for部分 -->
-<%= form_for @cart, url:carts_path, method: :post do |f| %>
-<div class="item">
-<%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
-</div>
-
-<br>
-  <h2><%= @item.name %></h2>
- <br>
-
-  <%= @item.explanation %>
-<br>
+		<div class='row'>
+			<div class='col-md-3'>
+       <div class="top-text box15">
+            <table class='table'>
+              
+            <tr><h2>ジャンル検索</h2></tr>
+            <% @genres.each do |a| %>
 
 
-   ¥<%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>(税込)
-</div>
-</div class='row'>
-<div class='col-md-8 '>
-</div>
-<div class='col-md-2 '>
-<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
-    <%= f.hidden_field :item_id, :value => @item.id %>
 
-<%= f.submit 'カートに入れる' %>
-<% end %>
-</div>
+            <tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+           
+            <% end %>
+            </table>
+            </div>
+        </div>
 
-</div>
+			<div class='col-md-7'>
 
-</div>
+				<%= notice %>
+				<!-- form_for部分 -->
+				<%= form_for @cart, url:carts_path, method: :post do |f| %>
+				<div class="item">
+				   <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
+				</div>
+
+				<br>
+				 <h2><%= @item.name %></h2>
+				 <br>
+
+				  <%= @item.explanation %>
+				<br>
+
+				<div class='item-show-price' >
+				   <font size="5">¥<%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %></font>(税込)
+				</div>
+			</div>
+		</div>
+		<div class='col-md-8 '>
+		</div>
+		<div class='col-md-2 '>
+		<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
+		    <%= f.hidden_field :item_id, :value => @item.id %>
+
+		<%= f.submit 'カートに入れる',class: 'btn btn-primary btn-sm' %>
+		<% end %>
+		</div>
+
+	</div>
+
