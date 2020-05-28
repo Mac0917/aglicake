@@ -8,6 +8,12 @@ class OrdersController < ApplicationController
     @item_total_sum = 0
     @cartitems = current_member.carts
 
+  def show
+    @order = Order.find(params[:id])
+    @item_sum = 0
+    @order.order_items.each do |order_item|
+      @item_sum += (order_item.quantity * order_item.item.excluded * 1.1).floor 
+    end
   end
   
 
@@ -42,9 +48,9 @@ class OrdersController < ApplicationController
       @sum += ((cart.quantity * cart.item.excluded) * 1.1).floor 
     end
     #binding.pry
-  #else
-      flash[:empty] = "選択していない欄があります"
-      #render :new
+    #else
+    flash[:empty] = "選択していない欄があります"
+    #render :new
     #end
     session[:order][:delivery_price] = 800
     session[:order][:total_price] = 800 + @sum

@@ -1,23 +1,26 @@
 
+<%= render 'layouts/header' %>
+
 <div class="container">
     <h2>マイページ</h2> <br />
     <div class="row-4">
         <div class="col-md-2">
             <h3>登録情報</h3>
         </div>
+
+        
         <div class="col-md-1">
-            <h3><%= link_to '編集する', edit_member_path(@member.id), class: 'btn btn-primary btn-sm' %></h3>
+            <h3><%= link_to "編集する", edit_member_path(@member.id), class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></h3>
         </div>
         <div class="col-md-1">
-            <h3><%= link_to "パスワードを変更する", edit_member_registration_path, class: 'btn btn-primary btn-sm' %></h3>
+            <h3><%= link_to "パスワードを変更する", edit_member_registration_path, class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></h3>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
         <div class="col-md-8">
-    <table class="table table-hover">
+    <table class="table table-bordered">
     <thead>
     </thead>
     <tbody>
@@ -52,7 +55,6 @@
     </tbody>
         </table>
         </div>
-    </div>
 </div>
 
 
@@ -63,7 +65,7 @@
             <h3>配送先</h3>
         </div>
         <div class="col-md-1">
-            <h3><%= link_to "一覧を見る", shipping_addresses_path, class: 'btn btn-primary btn-sm' %></h3>
+            <h3><%= link_to "一覧を見る", shipping_addresses_path, class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></h3>
         </div>
     </div>
 </div>
@@ -74,7 +76,7 @@
             <h3>注文履歴</h3>
         </div>
         <div class="col-md-1">
-            <h3><%= link_to "一覧を見る", orders_path, class: 'btn btn-primary btn-sm' %></h3>
+            <h3><%= link_to "一覧を見る", orders_path, class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></h3>
         </div>
     </div>
 </div>

@@ -21,10 +21,45 @@
     padding: 0px;
     box-sizing: border-box;
   }
+  
+  /* 結構便利 */
+   .back {
+    height: 100vh;
+    margin-top: -20px;
+  }
 
+  .link_new:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: blue;
+  }
+  
+
+  /* ここからapplication.html */
+  .logo:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50px;
+  }
+
+  #footer {
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+  /* ここまでapplication.html */
+
+
+  /* ここからtop */
   .animation {
     animation: fadeIn 2s ease 0s 1 normal;
     -webkit-animation: fadeIn 6s ease 0s 1 normal;
+    color: #fff;
   }
 
   @keyframes fadeIn {
@@ -39,14 +74,13 @@
     
   .bg-slider {
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     background-position:center center;
     background-size: cover;
     justify-content: center;
     margin-bottom: 0;
     margin-top: -20px;
   }
-
   .text {
     color: #fff;
     font-size: 20px;
@@ -59,30 +93,26 @@
     font-weight: bold;
     margin-top: 80px;
   }
+  /* ここまでtop */
 
+
+  /* ここからheader */
   header {
     position: static;
     width: 100%; 
+    margin-bottom: 100px;
   }
 
-  body {
-    height: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    padding-top: 0;
-  }
-
-  .logo:hover {
-    text-decoration: none;
-    background-color: transparent;
+  .flash_message {
+    position: absolute;
+    left: 600px;
+    top: 40px
   }
   
-  /* 結構便利 */
-  .back {
-    height: 100vh;
-    margin-top: -20px;
+  .select_icon {
+    margin-left: 720px;
+    margin-top: 30px;
   }
-  
 
   .back_image {
     background-color: red;
@@ -97,51 +127,29 @@
     color: #fff;
     text-align: center;
     padding: 30px 0;
-   
+  }
+  .special_icon {
+    list-style-type: none;
+    display:inline;
+    margin-right: 20px;
   }
 
-  .image1 {
-    background-image: url(test1.jpg);
-    }
-
-  .image2 {
-    background-image: url(test2.jpg);
-    }
-
-  .image3 {
-    background-image: url(test3.jpg);
-    }
-    .image4 {
-    background-image: url(test4.jpg);
-    }
-    .image5 {
-    background-image: url(test5.jpg);
-    }
-    
-    #container{
-      height: 500px;
-      width: 100%;
-    }
-
-    #photo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto;
-      text-align: left;
-      overflow: hidden;
-      position: relative;
+  .glyphicon:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: cornflowerblue;
   }
-  #photo img {
-      top: 100;
-      left: 600;
-      position: absolute;
-  }
-
+  /* ここまでheader */
 
 
   /* ここから会員登録画面 */ 
-  .new_member {
-    margin-top: 60px;
+  .back_special {
+    background-color: white;
+    margin-top: -20px;
+  }
+
+  .new_members {
+    margin-top: 10px;
     margin-left: 30px;
     margin-bottom: 40px;
   }
@@ -176,60 +184,93 @@
 
   .login_mem {
     margin-left: 100px;
+    margin-bottom: 238px;
+  }
+
+  .field_with_errors {
+    display: contents;
+    @extend .has-error;
   }
   /* ここまで会員登録画面 */
 
 
+  /* ここから会員ログイン */
+  .log_in_btn {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-bottom: 30px;
+  }
+   
+  .pass {
+    margin-left: 300px;
+  }
 
-
-
-
-
-
-//adminformからthまでわぎが記載しております！//
-body{
-
-}
-.whole_info{
-  box-sizing: border-box;
+  .just3 {
+    margin-top: 30px;
+    margin-left: 150px;
+  }
+  /* ここまで会員ログイン */
 
   
-}
+  /* ここから配送index edit */
+  .shipping {
+     margin-left: 40px;
+     margin-bottom: 20px;
+   }
+   
+  .regstration {
+    margin-left: 30px;
+  }
+  .reg_btn {
+     margin-left: 100px;
+     width: 150px;
+   }
+
+  .table {
+     margin-top: 80px;
+   }
+
+  .Edit_btn {
+    margin-right: 30px;
+  }
+  .cart_right {
+    text-align: right;
+  }
+  
+  .h3 .sample {
+    color: red;
+  }
+  
+  .cart-table{
+    table-layout: fixed;
+  }
+  
+  .cart_number_field{
+    width: 50%;
+  }
+  
+  .cart-amount-migi {
+    text-align: right;
+  }
+/* ここまで配送index edit */ 
+
+
+
+
+
+
+
+
+
+  //adminformからthまでわぎが記載しております！//
+
   .adminform{
     margin-right: 100px;
   }
-
-  .mailfield{
-    margin-right: 60px;
-    padding-bottom: 15px;
-    font-size: larger;
+  .whole_info{
+    box-sizing: border-box;
   }
-
-  .field{
-    margin-right: 30px;
-    font-size: larger;
-    padding-bottom: 5px;
-  }
-  
-  .admins{
-    color: gray;
-    margin-right: 650px;
-  }
-  
-  .row{
-    margin-top: 130px;
-    text-align: center;
-    line-height: 20px;
-  }
-  
-  .row2{
-    margin-top: 170px;
-  }
-  
-  .title{
-    color: white;
-  }
-  
   .clearfix::after{
     content: "";
     clear: both;
@@ -241,31 +282,6 @@ body{
   }
   .admins-toptitle{
     margin-bottom: 100px;
-  }
-  
-  
-  .box1 {
-    background-color: #FFFFFF;
-    height: 130px;
-    width: 130px;
-    float: left;
-    margin-left: 50px;
-  }
-  
-  .bg1 {
-      background-color: blue;
-  }
-   
-  .bg2 {
-      background-color: gold;
-  }
-   
-  .bg3 {
-      background-color: lightgreen;
-  }
-   
-  .bg4 {
-      background-color: red;
   }
   
   .main {
@@ -379,14 +395,24 @@ font-size: 20px;
   padding-bottom: 70px;
   font-style: oblique;
   color: darkgoldenrod;
- 
+  text-align: center;
 }
 .bodypaint2{
   color: darkgoldenrod;
   padding-bottom: 50px;
+  text-align: center;
+}
+.bodypaint3{
+  text-align: center;
 }
 
 
 th{
   padding: 10px 20px 20px 0;
 }
+  /* ここまでわぎのやつです */ 
+ 
+
+
+
+

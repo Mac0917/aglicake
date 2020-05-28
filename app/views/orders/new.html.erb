@@ -2,6 +2,7 @@
 <%= render "layouts/header" %>
 <div class="container">
 <div class="row-order">
+
 <div class="order-info"><strong>注文情報入力</strong></div>
 
 <%= form_with( model: @order, url: {action:'purchase'}, local: true ) do |f| %>
@@ -56,6 +57,7 @@
 <div class="submitbtn"><br>
 <%= f.submit '確定画面に進む',class: "btn btn-primary "%>
 </div>
+
 <% end %>
 
 </div>

@@ -35,7 +35,7 @@ $(function () {
 	  // ナビゲーション矢印の表示(trueで表示)
 	  arrows : true,
 	  // スライドショーの自動再生(falseで自動再生なし)
-	  autoPlay : false,
+	  autoPlay : true,
 	  // 自動再生時のスライド切替間隔(ミリ秒)
 	  autoPlayDuration : 3000,
 	  // キーボードの矢印キーによるスライド送りの設定(trueで有効)
@@ -49,7 +49,7 @@ $(function () {
 //背景画像をスライダーにする
 $(function() {
 	$('.bg-slider').bgSwitcher({
-		images: ['/assets/cake9.jpg','/assets/cake7.jpg','/assets/cake8.jpg','/assets/test1.jpg',],   //画像を呼び込むにはこの記述しかない
+		images: ['/assets/cake12.jpg','/assets/cake7.jpg','/assets/cake8.jpg',],   //画像を呼び込むにはこの記述しかない
 		interval: 10000,
 		loop: true,
 		shuffle: true,

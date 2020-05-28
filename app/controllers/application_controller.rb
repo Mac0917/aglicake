@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
                 flash[:notice] = "このメールアドレスは使用できません"
                 root_path
             else
-            flash[:notice] = "ようこそ、#{resource.last_name}さん"
+            flash[:notice] = "ようこそ、#{resource.last_name}さん!"
             items_path(resource)
             end
         when Admin
