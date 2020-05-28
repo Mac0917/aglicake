@@ -1,8 +1,8 @@
 <div class="back">
     <%= render "layouts/header" %>
     <div class="retire">
-        <h1>本当に退会しますか？</h1>
-        <h4 class="alert_message">退会すると、会員登録情報や<br>これまでの購入履歴が閲覧できなくなります。<br>退会する場合は、「退会する」をクリックしてください。</h2>
+        <h1>本当に退会しますか？</h1><br />
+        <h4 class="alert_message">退会すると、会員登録情報や<br>これまでの購入履歴が閲覧できなくなります。<br>退会する場合は、「退会する」をクリックしてください。</h2><br />
         <%=link_to "退会しない", edit_member_path(current_member.id), class: "btn btn-primary hold_btn", style: 'color:#FFFFFF;'%>
         <%=link_to "退会する", member_status_edit_path, method: :PATCH, class: "btn btn-danger retire_btn", style: 'color:#FFFFFF;'%>
     </div>
