@@ -1,7 +1,6 @@
+<div class="back" >
 <%= render "layouts/header" %>
-
 <div class='container'>
-
 
 <div class='col-md-6 col-md-offset-3'>
 <h3>商品詳細</h3>
@@ -26,20 +25,20 @@
   <%= @genre.name %>
 </p>
 
-<p>
+<s>
   <strong>税込価格：</strong>
-   <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
-
-</p>
-
+   <%=  "#{(BigDecimal(@item.excluded) * BigDecimal("1.1")).floor} 円" %>
+</s>
 <p>
   <strong>販売ステータス：</strong>
   <%= @item.status %>
 </p>
+
 <div class="a-item-show-btn">
 <%= link_to '編集する', edit_admins_item_path(@item),class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %>
 </div>
 <% end %>
 
+</div>
 </div>
 </div>
