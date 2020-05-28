@@ -6,7 +6,7 @@
 <div class='col-xs-9'>
 
 <h1>商品一覧</h1>
-<td><%= link_to 'new', new_admins_item_path %></td>
+<td><%= link_to 'new', new_admins_item_path, class: "link_new" %></td>
       <table class='table table-hover table-inverse'>
         <tr>
           <th>商品ID</th>
@@ -19,7 +19,7 @@
         <% @items.each do |item| %>
           <tr>
             <td><%= item.id %></td>
-            <td><%= link_to item.name, admins_item_path(item.id) %></td>
+            <td><%= link_to item.name, admins_item_path(item.id), class: "link_new" %></td>
             <td><%= item.excluded %></td>
             
             <td><%= item.genre.name %></td>

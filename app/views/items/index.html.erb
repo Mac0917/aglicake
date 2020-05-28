@@ -1,3 +1,4 @@
+<div class="back">
 <%= render "layouts/header" %>
 
 <div class='container'>
@@ -15,7 +16,7 @@
 
 
 
-            <tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+            <tr><td><%= link_to a.name , items_path(genre_id: a.id), class: "link_new"%></td></tr>
            
             <% end %>
             </table>
@@ -37,7 +38,7 @@
 
 
       <div class="text-center">
-       <%= link_to item.name, item_path(item.id) %>
+       <%= link_to item.name, item_path(item.id), class: "link_new" %>
        <br>
 
 
@@ -57,3 +58,4 @@
 </div>
 </div>
 <%= paginate(@items) %>
+</div>
