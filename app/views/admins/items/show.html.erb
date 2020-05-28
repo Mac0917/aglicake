@@ -25,10 +25,10 @@
   <%= @genre.name %>
 </p>
 
-<s>
+<p>
   <strong>税込価格：</strong>
    <%=  "#{(BigDecimal(@item.excluded) * BigDecimal("1.1")).floor} 円" %>
-</s>
+</p>
 <p>
   <strong>販売ステータス：</strong>
   <%= @item.status %>
