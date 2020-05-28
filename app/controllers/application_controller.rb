@@ -30,6 +30,7 @@ class ApplicationController < ActionController::Base
         members_path(resource)
     end
     
+    
     protected
     
     def configure_permitted_parameters
