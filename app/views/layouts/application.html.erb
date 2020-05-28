@@ -11,7 +11,18 @@
 <!--//はweb上のファイルを呼び込んでいる-->
   </head>
   <body>
-     
+          <div class="flash_message">
+            <% if flash[:notice] %>
+                <p><%= flash[:notice] %></p>
+            <%end%>
+            <% if alert %>
+                <p><%= alert %></p>
+            <%end%>
+        </div>
+        
+     <%= link_to root_path do %>
+                <%= image_tag 'logo.png', class: "logo" %>
+            <% end %>
      <%= yield %>
       <footer >
           <div id="footer">

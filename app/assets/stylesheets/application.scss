@@ -81,7 +81,7 @@
    background-size: cover;
    justify-content: center;
    margin-bottom: 0;
-   margin-top: -20px;
+   margin-top: -52px;
  }
  .text {
    color: #fff;
@@ -107,12 +107,12 @@
 
  .flash_message {
    position: absolute;
-   left: 600px;
-   top: 40px
+   left: 200px;
+   top: 150px
  }
  
  .select_icon {
-   margin-left: 720px;
+   margin-left: 920px;
    margin-top: 30px;
  }
 
@@ -140,6 +140,9 @@ a.glyphicon:hover {
    text-decoration: none;
    background-color: transparent;
    color: cornflowerblue;
+ }
+ .head_container{
+   margin-bottom: 100px;
  }
  /* ここまでheader */
 
@@ -196,6 +199,24 @@ a.glyphicon:hover {
  /* ここまで会員登録画面 */
 
 
+  .Edit_btn {
+    margin-right: 30px;
+  }
+  .cart_right {
+    text-align: right;
+  }
+  
+  .h3 .sample {
+    color: red;
+  }
+  
+  .cart-table{
+    table-layout: fixed;
+  }
+  
+  .cart_number_field{
+    width: 50%;
+  }
  /* ここから会員ログイン */
  .log_in_btn {
    width: 150px;
@@ -360,12 +381,12 @@ left:150px;
  }
  
  .ordercount{
-   margin-left: 400px;
+   margin-left: 380px;
  }
  
  .comment{
    padding-top: 50px;
-   margin-left: 50px;
+   margin-left: 250px;
  }
 
 .table-box{
@@ -415,7 +436,10 @@ position: absolute;
  margin-left: 68px;
  padding-top: 12px;
  font-size: 20px;
-
+}
+.admins-toptitle{
+  color: chocolate;
+  margin-left: 180px;
 }
 
 .submitbtn{
