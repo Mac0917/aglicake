@@ -11,6 +11,7 @@
   <div class="item_image"></div>
   <P></p>
  <label for="item_image">Image</label>
+
   <%= f.attachment_field :item_image, placeholder: "商品画像" %>
   </div>
 
@@ -29,7 +30,7 @@
      <%= f.select :status, Item.statuses.keys.to_a, {} %>
 <p>
 <%= f.submit  %>
-	
+
 <% end %>
 </p>
 </div>

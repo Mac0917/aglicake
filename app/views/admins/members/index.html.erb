@@ -13,7 +13,7 @@
 			<tr>
                 <td><%=member.id%></td>
                 <td>
-                    <%= link_to admins_member_path(member.id) do %>
+                    <%= link_to admins_member_path(member.id), class: "link_new" do %>
                         <%=member.last_name%><%=member.first_name%>
                     <%end%>
                 </td>
