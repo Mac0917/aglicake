@@ -2,42 +2,59 @@
 <%= render "layouts/header" %>
 <div class='container'>
 
-<div class='col-md-6 col-md-offset-3'>
+	<div class='container'>
 
 
-<%= notice %>
-<h2>商品詳細</h2>
-<!-- form_for部分 -->
-<%= form_for @cart, url:carts_path, method: :post do |f| %>
 
-<tr><%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %></tr>
+		<div class='row'>
+			<div class='col-md-3'>
+       <div class="top-text box15">
+            <table class='table'>
+              
+            <tr><h2>ジャンル検索</h2></tr>
+            <% @genres.each do |a| %>
 
-<p>
-  <strong>商品名：</strong>
-  <%= @item.name %>
-</p>
 
-<p>
-  <strong>商品説明：</strong>
-  <%= @item.explanation %>
-</p>
-<p>
-  <strong>ジャンル：</strong>
-  <%= @genre.name %>
-</p>
 
-<p>
-  <strong>税込価格：</strong>
-   <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
+            <tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+           
+            <% end %>
+            </table>
+            </div>
+        </div>
 
-</p>
-<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
-<p>
-    <%= f.hidden_field :item_id, :value => @item.id %>
-</p>
+			<div class='col-md-7'>
 
-<%= f.submit 'カートに入れる' %>
-<% end %>
+				<%= notice %>
+				<!-- form_for部分 -->
+				<%= form_for @cart, url:carts_path, method: :post do |f| %>
+				<div class="item">
+				   <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
+				</div>
+
+				<br>
+				 <h2><%= @item.name %></h2>
+				 <br>
+
+				  <%= @item.explanation %>
+				<br>
+
+				<div class='item-show-price'>
+				<font size="5">¥<%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %></font>(税込)
+				</div>
+			</div>
+		</div>
+		<div class='col-md-8 '>
+		</div>
+		<div class='col-md-2 '>
+		<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
+		    <%= f.hidden_field :item_id, :value => @item.id %>
+
+		<%= f.submit 'カートに入れる',class: 'btn btn-primary btn-sm' %>
+		<% end %>
+		</div>
+
+	</div>
 
 </div>
 </div>

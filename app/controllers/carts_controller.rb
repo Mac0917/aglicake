@@ -13,10 +13,11 @@ class CartsController < ApplicationController
             cart_item.save!
         else
             @cart = current_member.carts.new(cart_params)
-            @cart.save!
-        end
-        flash[:success] = 'カートに商品を追加しました'
-        redirect_back(fallback_location: root_path)
+             @cart.save!
+             flash[:success] = 'カートに商品を追加しました'
+         end
+
+                redirect_to carts_path
     end
 
     def update

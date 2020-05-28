@@ -26,8 +26,7 @@ class Admins::MembersController < ApplicationController
     end
 
     def top
-        @member = Member.where(created_at: Date.today)
-        @orders = Order.where(created_at: Date.today)
+        @orders = Order.all
     end
 
     private 

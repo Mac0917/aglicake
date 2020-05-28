@@ -1,11 +1,10 @@
 <% if member.errors.any? %>
     <div class="alert">
-      <h2><%= pluralize(member.errors.count, "件") %>のエラーにより管理者情報を登録できませんでした</h2>
-      <ul class="error" type="disc">
+      <h2><%= pluralize(member.errors.count, "件") %>のエラーにより<br>メールを送信できませんでした</h2>
+      <ul>
         <% member.errors.full_messages.each do |message| %>
           <li class="error_message"><%= message %></li>
         <% end %>
       </ul>
     </div>
 <% end %>
-
