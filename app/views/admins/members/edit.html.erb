@@ -4,7 +4,7 @@
 <div class="container">
 <div class="col-md-9">
 <table class="table admingawa-member table-hover">
-  <tbody>
+  <tbody class='senkeshi'>
   <h2><%=@members.last_name%><%=@member.first_name%>さんの会員情報編集</h2>
   <%= render "layouts/error_messages", member: @member %>
   <%= form_for(@member, url: admins_member_path(@member.id))do |f| %>
@@ -35,13 +35,13 @@
   <tr>
     <div class="field">
       <th><%= f.label :郵便番号 %><br /></th>
-      <td><%= f.text_field :post_number %><td>
+      <td><%= f.text_field :post_number %></td>
     </div>
   </tr>
   <tr>
     <div class="field">
-      <th><%= f.label :住所 %><br /><th>
-      <td><%= f.text_field :address %><td>
+      <th><%= f.label :住所 %><br /></th>
+      <td><%= f.text_field :address %></td>
     </div>
   </tr>
   <tr>

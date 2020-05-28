@@ -26,6 +26,7 @@ class Admins::MembersController < ApplicationController
     end
 
     def top
+        @orders = Order.all
     end
 
     private 

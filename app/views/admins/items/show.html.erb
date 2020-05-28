@@ -1,13 +1,15 @@
+<%= render "layouts/header" %>
+
 <div class='container'>
 
-
 <div class='col-md-6 col-md-offset-3'>
-<h2>商品詳細</h2>
+<h3>商品詳細</h3>
 <!-- form_for部分 -->
 <%= render "layouts/item_error_messages", item: @item %>
 <%= form_for @item, url: admins_items_path do |f| %>
 
-<tr><%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %></tr>
+<%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
+
 
 <p>
   <strong>商品名：</strong>
@@ -23,19 +25,18 @@
   <%= @genre.name %>
 </p>
 
-<p>
+<s>
   <strong>税込価格：</strong>
-   <%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %>円
-
-</p>
-
+   <%=  "#{(BigDecimal(@item.excluded) * BigDecimal("1.1")).floor} 円" %>
+</s>
 <p>
   <strong>販売ステータス：</strong>
   <%= @item.status %>
 </p>
 
-<%= link_to '編集する', edit_admins_item_path(@item)%>
-
+<div class="a-item-show-btn">
+<%= link_to '編集する', edit_admins_item_path(@item),class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %>
+</div>
 <% end %>
 
 </div>
