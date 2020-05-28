@@ -26,7 +26,7 @@ def index
   	@item = Item.find(params[:id])
 
     if @item.update(item_params)
-    	flash[:notice] = "Item was successfully edited."
+    	flash[:notice] = "商品を編集しました."
       redirect_to admins_items_path
      else
       @genres = Genre.all

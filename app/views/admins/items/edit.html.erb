@@ -1,61 +1,60 @@
 <%= render "layouts/header" %>
 
 <div class='container'>
-<div class='row'>
-
-  <div class='col-md-3 '>
-
+<div class='col-md-3 '>
+<teble>
   <h1>商品編集</h1>
   <%= render "layouts/item_error_messages", item: @item %>
   <!-- form_for部分 -->
   <%= form_for @item, url: admins_item_path(@item), method: :patch do |f| %>
+  <tr>
+     <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+  <br>
+     <%= f.attachment_field :item_image, placeholder: "商品画像" %>
+  </tr>
+</teble>
 
-
-   <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
-
-     <br>
-      <%= f.attachment_field :item_image, placeholder: "商品画像" %>
 </div>
-<div class='col-md-6'>
-      <label for="item_title">商品名</label>
-      <%= f.text_field :name, class:"form-control" %>
+<div class='col-md-9'>
+   <table>
+    <tr>
+      <th><label for="item_title">商品名</label></th>
+      <td><%= f.text_field :name, class:"form-control" %></td>
+    </tr>
 
-
-    <div>
-      <label for="item_explanation">商品説明</label>
+     <tr>
+       <th><label for="item_explanation">商品説明</label></th>
+       <br>
+       <td><%= f.text_area :explanation, class:"form-control" %></td>
+     </tr>
+     <tr>
+      <th><label for="item_excluded">ジャンル</label></th>
       <br>
-
-      <%= f.text_area :explanation, class:"form-control" %>
-    </div>
-
-   <div>
-      <label for="item_excluded">ジャンル</label>
+      <td><%= f.collection_select(:genre_id, @genres, :id, :name) %></td>
+     </tr>
+     <tr>
+      <th><label for="item_excluded">税抜価格</label></th>
       <br>
- <%= f.collection_select(:genre_id, @genres, :id, :name) %>
+      <td><%= f.number_field :excluded, class:"form-control" %></td>
+      <td>円</td>
+    </tr>
 
-   </div>
-    <div>
-      <label for="item_excluded">税抜価格</label>
-      <br>
-
-      <%= f.number_field :excluded, class:"form-control" %>円
-    </div>
-
-     <div>
-        <label for="item_excluded">販売ステータス</label>
+     <tr>
+       <th><label for="item_excluded">販売ステータス</label></th>
         <br>
-
-        <%= f.select :status, Item.statuses.keys.to_a, {} %>
-      </div>
-
-      <%= f.submit '変更を保存',class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %>
-
-      </div>
-
+        <td><%= f.select :status, Item.statuses.keys.to_a, {} %></td>
+     </tr>
+     <tr>
+      <th></th>
+      <th></th>
+      <td><%= f.submit '変更を保存',class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></td>
+     </tr>
+    </table>
+  </div>
  <% end %>
 
 </div>
-  </div>
+
 
 
 
