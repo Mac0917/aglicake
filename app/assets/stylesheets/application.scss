@@ -315,7 +315,7 @@ left:150px;
 .btn-right{
  position:relative;
  left:800px;
- top:80px;
+
  }
 //ここまでがまつさんです//
 
@@ -487,12 +487,6 @@ th{
 
 
 
-
-
-
-
-
-  
 // ここまでカート分
 
 .admingawa-member {
@@ -507,9 +501,12 @@ th{
 
 // ここまで
 
-
-
 .bxslider {
   width: 100%;
+}
+
+// 退会確認ページの表示を中心に
+.retire {
+  text-align:center;
 }
 

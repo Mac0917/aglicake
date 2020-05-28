@@ -1,7 +1,20 @@
 <header>
-    <div class="head_container">
+    <div class="container">
         
-
+        <div class="logo" style="position:relative;
+ left:-35px;">
+            <%= link_to root_path do %>
+                <%= image_tag 'logo.png', class: "logo" %>
+        </div>
+            <% end %>
+        <div class="flash_message">
+            <% if flash[:notice] %>
+                <p><%= flash[:notice] %></p>
+            <%end%>
+            <% if alert %>
+                <p><%= alert %></p>
+            <%end%>
+        </div>
         <div class="select_icon">
             <ul>
                 <% if admin_signed_in? %>
@@ -23,7 +36,7 @@
                     <div class="search-form" style="margin-top: 70px; text-align: center;">
            <%= form_tag(search_items_path, method: :get) do %>
            <%= text_field_tag :name %>
-           <%= submit_tag 'search',class:"search-module-button" do %>
+           <%= submit_tag 'SEARCH', class: 'btn-xs btn-primary' do %>
            <% end %>
            <% end %>
             </ul>
