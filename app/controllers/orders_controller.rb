@@ -1,14 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_member!, except: [:top]
 
-  def index
-    @orders = Order.all
-    @oreder = current_order
-  end
-
   def show
-    @order = Order.find(current_member.id)
-    @orders = current_member.carts
+    @order = Order.find(params[:id])
+    @item_sum = 0
+    @order.order_items.each do |order_item|
+      @item_sum += (order_item.quantity * order_item.item.excluded * 1.1).floor 
+    end
   end
 
   def new

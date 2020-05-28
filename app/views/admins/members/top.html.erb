@@ -1,2 +1,26 @@
-<%= render "layouts/header" %>
-<h1>本日の注文件数</h1>
+<div class="back">
+    <%= render "layouts/header" %>
+    <div class="container">
+        <div class="row">
+
+        <div class="col-xs-12">
+            <div class="admons-box">
+                <h1><strong>😎　🔑管理者画面🔑　😎</strong></h1>
+                <div class ="oerdercount">
+                    <table>
+                        <tr>
+                            <th><h2>📄 ・本日の🍰注文件数<h2></th>
+                            <th>　　　　　　　　　　　　　　　　　</th>
+                            <th><h2><%= @orders.count %>件！！！</h2></th>
+                        </tr>
+                    </table>
+                    <div class="comment"></div>
+                        <h3>🌠 こちらで以上になります。管理者はご確認御願い致します<h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+ </div>

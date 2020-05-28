@@ -1,15 +1,11 @@
-<% if resource.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= I18n.t("errors.messages.not_saved",
-                 count: resource.errors.count,
-                 resource: resource.class.model_name.human.downcase)
-       %>
-    </h2>
-    <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+<% if member.errors.any? %>
+    <div class="alert">
+      <h2><%= pluralize(member.errors.count, "件") %>のエラーにより管理者情報を登録できませんでした</h2>
+      <ul class="error" type="disc">
+        <% member.errors.full_messages.each do |message| %>
+          <li class="error_message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
 <% end %>
+

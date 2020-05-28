@@ -13,6 +13,13 @@ ja:
         phone_number: 電話番号
         email: メールアドレス
         password: パスワード
+        current_password: 現在のパスワード
+        password_confirmation: 新しいパスワード
+      admin: 
+        email: メールアドレス
+        password: パスワード
+        current_password: 現在のパスワード
+        password_confirmation: 新しいパスワード
       shipping_address:
         post_number: 郵便番号
         delively_address: 住所
