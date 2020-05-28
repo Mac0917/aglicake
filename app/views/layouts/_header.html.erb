@@ -1,6 +1,12 @@
 <header>
-    <div class="head_container">
+    <div class="container">
         
+        <div class="logo" style="position:relative;
+ left:-35px;">
+            <%= link_to root_path do %>
+                <%= image_tag 'logo.png', class: "logo" %>
+        </div>
+            <% end %>
         <div class="flash_message">
             <% if flash[:notice] %>
                 <p><%= flash[:notice] %></p>
