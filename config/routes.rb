@@ -25,13 +25,14 @@ Rails.application.routes.draw do
   resources :members, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :shipping_addresses
-  resources :items, only: [:index, :show, ]
+  resources :items, only: [:index, :show, ] do
+    get :search, on: :collection
+  end
   delete 'carts/destroy_all'
   resources :carts, only: [:new, :create, :index, :edit, :update, :destroy]
   get 'orders/thanks'
-  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
+  resources :orders, only: [:new, :create, :update ,:index, :show]
   post 'orders/purchase'
-  resources :orders, only: [:new, :create, :index, :show, :edit, :update]
   root "home#top"
-  get "admins/top" => "admins/members#top", as: "admins_top"
+  get "admins/top" => "admins/admins#top", as: "admins_top"
 end
