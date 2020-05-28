@@ -33,7 +33,7 @@
     background-color: transparent;
     color: blue;
   }
-  
+
 
   /* ここからapplication.html */
   .logo:hover {
@@ -220,6 +220,8 @@
   }
   /* ここまで会員ログイン */
 
+
+/* ここから商品系 */
 .item {
  float:left;
  margin: 5px 20px;
@@ -261,9 +263,14 @@ text-align:center;
 position:relative;
 top:150px;
 left:150px;
-
 }
 
+.btn-right{
+ position:relative;
+ left:800px;
+ top:80px;
+}
+/* ここまで商品系 */
 
 
   /* ここから配送index edit */
@@ -307,7 +314,7 @@ left:150px;
   /* ここまで管理者ログイン画面 */
 
 
-  /* ここから会員index show */ 
+  /* ここから会員index show */
   .table-bordered {
     margin-top: 20px;
   }
@@ -315,7 +322,7 @@ left:150px;
   .btn_btn {
     margin-top: 50px;
   }
-  
+
   .btn_save {
     width: 250px;
     margin-left: 250px;
@@ -328,7 +335,7 @@ left:150px;
   /* ここまで会員index show */
 
 
-  /* ここから会員退会画面 */ 
+  /* ここから会員退会画面 */
   .retire {
     text-align: center;
   }
@@ -346,7 +353,7 @@ left:150px;
   .retire_btn {
     width: 180px;
   }
-  /* ここまで会員退会画面 */ 
+  /* ここまで会員退会画面 */
 
 
   /* ここからメール送信画面 */
@@ -354,8 +361,7 @@ left:150px;
     text-align: center;
     width: 40%;
     margin: 0 auto;
-  } 
-  
+  }
   .email_tag {
     margin-top: 20px;
   }
@@ -364,17 +370,6 @@ left:150px;
     margin-top: 50px;
   }
   /* ここまでメール送信画面 */
-
-
-
-
-
-
-
-
-
-
-
 
 .cart_right {
   text-align: right;
