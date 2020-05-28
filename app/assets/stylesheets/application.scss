@@ -192,7 +192,7 @@
 
   .login_mem {
     margin-left: 100px;
-    margin-bottom: 238px;
+    margin-bottom: 240px;
   }
 
   .field_with_errors {
@@ -305,6 +305,74 @@ left:150px;
     margin-top: 60px;
   }
   /* ここまで管理者ログイン画面 */
+
+
+  /* ここから会員index show */ 
+  .table-bordered {
+    margin-top: 20px;
+  }
+
+  .btn_btn {
+    margin-top: 50px;
+  }
+  
+  .btn_save {
+    width: 250px;
+    margin-left: 250px;
+  }
+
+  .btn_quit {
+    width: 100px;
+    margin-left: 240px;
+  }
+  /* ここまで会員index show */
+
+
+  /* ここから会員退会画面 */ 
+  .retire {
+    text-align: center;
+  }
+
+  .alert_message {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .hold_btn {
+    margin-right: 30px;
+    width: 180px;
+  }
+
+  .retire_btn {
+    width: 180px;
+  }
+  /* ここまで会員退会画面 */ 
+
+
+  /* ここからメール送信画面 */
+  .send_mail {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+  } 
+  
+  .email_tag {
+    margin-top: 20px;
+  }
+
+  .btn-info {
+    margin-top: 50px;
+  }
+  /* ここまでメール送信画面 */
+
+
+
+
+
+
+
+
+
 
 
 
