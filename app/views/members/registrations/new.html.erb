@@ -12,22 +12,22 @@
                     <tr>
                       <th class="session_mem">名前</th>
                       <td class="session_put">(<%= f.label :姓%>)</td>
-                      <td width="400" class="session_put"><%= f.text_field :last_name %><span class="just1">(<%= f.label :名%>)</span><span class="just_special"><%= f.text_field :first_name %></span></td>
+                      <td width="600" class="session_put"><%= f.text_field :last_name, size: "30"  %><span class="just1">(<%= f.label :名%>)</span><span class="just_special"><%= f.text_field :first_name, size: "30"  %></span></td>
                     </tr>
                     <tr>
                       <th class="session_mem">フリガナ</th>
                       <td class="session_put">(<%= f.label :セイ %>)</td>
-                      <td class="session_put"><%= f.text_field :last_name_kana %><span class="just2">(<%= f.label :メイ %>)<%= f.text_field :first_name_kana %></span></td>
+                      <td class="session_put"><%= f.text_field :last_name_kana, size: "30"  %><span class="just2">(<%= f.label :メイ %>)<%= f.text_field :first_name_kana, size: "30"  %></span></td>
                     </tr>
                     <tr>
                       <th class="session_mem">メールアドレス</th>
                       <td class="session_put"></td>
-                      <td class="session_put"><%= f.email_field :email %></td>
+                      <td class="session_put"><%= f.email_field :email, size: "30"  %></td>
                     </tr>
                     <tr>
                       <th class="session_mem">郵便番号</th>
                       <td class="session_put"></td>
-                      <td class="session_put"><%= f.text_field :post_number %></td>
+                      <td class="session_put"><%= f.text_field :post_number, size: "30"  %></td>
                     </tr>
                     <tr>
                       <th class="session_mem">住所</th>
@@ -37,17 +37,17 @@
                     <tr>
                       <th class="session_mem">電話番号(ハイフンなし)</th>
                       <td class="session_put"></td>
-                      <td class="session_put"><%= f.text_field :phone_number%></td>
+                      <td class="session_put"><%= f.text_field :phone_number, size: "30" %></td>
                     </tr>
                     <tr>
                       <th class="session_mem">パスワード(6文字以上)</th>
                       <td class="session_put"></td>
-                      <td class="session_put"><%= f.password_field :password, autocomplete: "new-password" %></td>
+                      <td class="session_put"><%= f.password_field :password, size: "30", autocomplete: "new-password" %></td>
                     </tr>
                     <tr>
                       <th class="session_mem">パスワード(確認用)</th>
                       <td class="session_put"></td>
-                      <td class="session_put"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td> 
+                      <td class="session_put"><%= f.password_field :password_confirmation, size: "30", autocomplete: "new-password" %></td> 
                     </tr>  
                 </tbody>
               </table>
