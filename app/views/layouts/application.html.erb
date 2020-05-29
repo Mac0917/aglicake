@@ -7,8 +7,7 @@
     <meta charset="UTF-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--application.jsを読んでいる-->
-    <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
-<!--//はweb上のファイルを呼び込んでいる-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script><!--//はweb上のファイルを呼び込んでいる-->
   </head>
   <body>
           <div class="flash_message">
@@ -24,14 +23,6 @@
                 <%= image_tag 'logo.png', class: "logo" %>
             <% end %>
      <%= yield %>
-      <footer >
-          <div id="footer">
-            <p class="footer-text">店舗情報</p>
-            <p class="footer-text">Aglicake</p>
-            <p class="footer-text">〒000-00000 東京都 TEL：000-0000-0000</p>
-            <p class="footer-text">平日 11:00～19:00／土日祝日 9:00～19:00 月曜定休（月曜祝日の場合は翌日休み)</p>
-            <p class="footer-text">こちらのサイトからのご注文は24時間受け付けております</p>
-           </div>
-      </footer>
+      
   </body>
 </html>

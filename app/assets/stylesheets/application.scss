@@ -26,7 +26,7 @@
  
  /* 結構便利 */
   .back {
-   height: 100vh;
+   height: 809px;
    margin-top: -20px;
  }
 
@@ -76,12 +76,12 @@
    
  .bg-slider {
    width: 100vw;
-   height: 100vh;
+   height: 808px;
    background-position:center center;
    background-size: cover;
    justify-content: center;
    margin-bottom: 0;
-   margin-top: -52px;
+   margin-top: -20px;
  }
  .text {
    color: #fff;
@@ -102,18 +102,19 @@
  header {
    position: static;
    width: 100%; 
-   margin-bottom: 100px;
+   margin-top: 20px;
+   margin-bottom: 40px;
  }
 
  .flash_message {
    position: absolute;
-   left: 200px;
-   top: 150px
+   left: 600px;
+   top: 40px
  }
  
  .select_icon {
-   margin-left: 920px;
-   margin-top: 30px;
+   margin-left: 1200px;
+   padding-top: 30px;
  }
 
  .back_image {
@@ -130,6 +131,7 @@ a.glyphicon:hover {
    text-align: center;
    padding: 30px 0;
  }
+
  .special_icon {
    list-style-type: none;
    display:inline;
@@ -273,6 +275,19 @@ a.glyphicon:hover {
    text-align: right;
  }
 /* ここまで配送index edit */ 
+
+/* ここからメール送信 */
+.send_mail {
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-info {
+  margin-top: 40px;
+}
+/* ここまでメール送信 */
+
 
 //ここはまつさん部分です。
 .item {
@@ -510,3 +525,29 @@ th{
   text-align:center;
 }
 
+
+
+
+/* 調整 */
+.pagi {
+  position: absolute;
+  bottom: 230px;
+  left: 1300px;
+}
+
+.submitbtn {
+  margin-bottom: 60px;
+}
+
+.action {
+  margin-bottom: 120px;
+}
+
+.btn_btn {
+  margin-top: 40px;
+  margin-left: 270px;
+}
+
+.btn_quit {
+  margin-left: 340px;
+}
