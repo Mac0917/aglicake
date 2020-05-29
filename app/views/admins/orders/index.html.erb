@@ -18,7 +18,7 @@
             <% @full_name = order.member.last_name + order.member.first_name %>
             <tr>
               <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-              <td><%= link_to"#{@full_name}", admins_order_path(order.id) %> 
+              <td><%= link_to"#{@full_name}", admins_order_path(order.id), class: "link_new" %> 
               <% order.order_items.each do |order_item| %>
                 <% @item_total_sum += order_item.quantity %>
               <% end %>

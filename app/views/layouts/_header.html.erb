@@ -12,7 +12,7 @@
             <ul>
                 <% if admin_signed_in? %>
                     <li class="special_icon"><%= link_to "商品一覧", admins_items_path, class: 'glyphicon glyphicon-list-alt' %></li>
-                    <li class="special_icon"><%= link_to " 会員一覧 ", admins_members_path, class: 'glyphicon glyphicon-user users' %></li>
+                    <li class="special_icon"><%= link_to "会員一覧 ", admins_members_path, class: 'glyphicon glyphicon-user' %></li>
                     <li class="special_icon"><%= link_to "注文履歴一覧", admins_orders_path, class: 'glyphicon glyphicon-list-alt' %></li>
                     <li class="special_icon"><%= link_to "ジャンル一覧", admins_genres_path, class: 'glyphicon glyphicon-book books' %></li>
                     <li class="special_icon"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
