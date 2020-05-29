@@ -26,7 +26,7 @@
  
  /* 結構便利 */
   .back {
-   height: 100vh;
+   height: 809px;
    margin-top: -20px;
  }
 
@@ -76,12 +76,12 @@
    
  .bg-slider {
    width: 100vw;
-   height: 101vh;
+   height: 808px;
    background-position:center center;
    background-size: cover;
    justify-content: center;
    margin-bottom: 0;
-   margin-top: -52px;
+   margin-top: -20px;
  }
  .text {
    color: #fff;
@@ -102,7 +102,8 @@
  header {
    position: static;
    width: 100%; 
-   margin-bottom: 100px;
+   margin-top: 20px;
+   margin-bottom: 40px;
  }
 
  .flash_message {
@@ -112,8 +113,8 @@
  }
  
  .select_icon {
-   margin-left: 720px;
-   margin-top: 30px;
+   margin-left: 1200px;
+   padding-top: 30px;
  }
 
  .back_image {
@@ -130,6 +131,7 @@ a.glyphicon:hover {
    text-align: center;
    padding: 30px 0;
  }
+
  .special_icon {
    list-style-type: none;
    display:inline;
@@ -140,6 +142,9 @@ a.glyphicon:hover {
    text-decoration: none;
    background-color: transparent;
    color: cornflowerblue;
+ }
+ .head_container{
+   margin-bottom: 100px;
  }
  /* ここまでheader */
 
@@ -196,6 +201,24 @@ a.glyphicon:hover {
  /* ここまで会員登録画面 */
 
 
+  .Edit_btn {
+    margin-right: 30px;
+  }
+  .cart_right {
+    text-align: right;
+  }
+  
+  .h3 .sample {
+    color: red;
+  }
+  
+  .cart-table{
+    table-layout: fixed;
+  }
+  
+  .cart_number_field{
+    width: 50%;
+  }
  /* ここから会員ログイン */
  .log_in_btn {
    width: 150px;
@@ -263,12 +286,7 @@ a.glyphicon:hover {
 .btn-info {
   margin-top: 40px;
 }
-
-.pagi {
-  position: absolute;
-  bottom: 230px;
-  left: 1300px;
-}
+/* ここまでメール送信 */
 
 
 //ここはまつさん部分です。
@@ -312,7 +330,7 @@ left:150px;
 .btn-right{
  position:relative;
  left:800px;
- top:80px;
+
  }
 //ここまでがまつさんです//
 
@@ -378,12 +396,12 @@ left:150px;
  }
  
  .ordercount{
-   margin-left: 400px;
+   margin-left: 380px;
  }
  
  .comment{
    padding-top: 50px;
-   margin-left: 50px;
+   margin-left: 250px;
  }
 
 .table-box{
@@ -433,7 +451,10 @@ position: absolute;
  margin-left: 68px;
  padding-top: 12px;
  font-size: 20px;
-
+}
+.admins-toptitle{
+  color: chocolate;
+  margin-left: 180px;
 }
 
 .submitbtn{
@@ -481,12 +502,6 @@ th{
 
 
 
-
-
-
-
-
-  
 // ここまでカート分
 
 .admingawa-member {
@@ -501,9 +516,38 @@ th{
 
 // ここまで
 
-
-
 .bxslider {
   width: 100%;
 }
 
+// 退会確認ページの表示を中心に
+.retire {
+  text-align:center;
+}
+
+
+
+
+/* 調整 */
+.pagi {
+  position: absolute;
+  bottom: 230px;
+  left: 1300px;
+}
+
+.submitbtn {
+  margin-bottom: 60px;
+}
+
+.action {
+  margin-bottom: 120px;
+}
+
+.btn_btn {
+  margin-top: 40px;
+  margin-left: 270px;
+}
+
+.btn_quit {
+  margin-left: 340px;
+}
