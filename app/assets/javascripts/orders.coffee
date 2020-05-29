@@ -5,6 +5,6 @@ $ ->
   $("#order_post_number").jpostal({
     postcode : [ "#order_post_number" ],
     address  : {
-    "#order_delively_address" : "%3%4%5"
+                  "#order_delivery_address" : "%3%4%5"
             }
   })

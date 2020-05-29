@@ -36,8 +36,8 @@
           <tr>
             <td><%= genre.name %></td>
             <td><%= genre.status %></td>
-            <td><%= link_to '編集する', edit_admins_genre_path(genre.id)  ,class:"btn-sm btn-success" %></td>
-            <td><%= link_to '削除',  admins_genre_path(genre.id), method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn-sm btn-danger" %></td>
+            <td><%= link_to '編集する', edit_admins_genre_path(genre.id), class:"btn-sm btn-success", style: 'color:#FFFFFF;' %></td>
+            <td><%= link_to '削除',  admins_genre_path(genre.id), method: :delete, "data-confirm" => "本当に削除しますか？",class: "btn-sm btn-danger", style: 'color:#FFFFFF;' %></td>
 
           </tr>
         <% end %>

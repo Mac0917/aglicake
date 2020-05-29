@@ -6,7 +6,7 @@
 <table>
   <tr>
     <h3>ショッピングカート</h3>
-    <p class="cart_right"><%= link_to 'カートを空にする',  carts_destroy_all_path, class:"btn-sm btn-danger", style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当にカートを空にしますか？" %></p>
+    <p class="cart_right"><%= link_to 'カートを空にする',  carts_destroy_all_path, class:"btn-sm btn-danger link_special", style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当にカートを空にしますか？" %></p>
   </tr>
 </table>
 
@@ -34,7 +34,7 @@
         <%= syoukei = cart.quantity * (BigDecimal(cart.item.excluded) * BigDecimal("1.1")).floor %>
       </td>
         <% price_all = price_all + syoukei %>
-        <td class="cart-amount-migi"><%= link_to '削除',  cart_path(cart),class:"btn-sm btn-danger",style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+        <td class="cart-amount-migi"><%= link_to '削除',  cart_path(cart),class:"btn-sm btn-danger link_special",style: 'color:#FFFFFF;', method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
       <% end %>
 </table>

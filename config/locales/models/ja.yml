@@ -28,3 +28,8 @@ ja:
         name: 商品名
         explanation: 商品説明
         excluded: 税抜価格
+      order: 
+        post_number: 郵便番号
+        delivery_address: 住所
+        delivery_name: 宛名
+        payment_methods: 支払方法
