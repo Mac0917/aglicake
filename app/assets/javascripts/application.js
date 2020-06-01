@@ -12,5 +12,29 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require jquery.jposta
+//= require bxslider
+//= require_tree . 
+//= require bootstrap-sprockets
+
+//repuire_tree .はすべてのjsを呼び込んでいる
+//gemを使うjavascriptは//= require jquery.jpostaのように記述する必要がある
+//skipprはjavascript/にskippr.jsとstylesheetsにskipper.jsでできる
+
+//背景画像をスライダーにする
+$(function() {
+	$('.bg-slider').bgSwitcher({
+		images: ['/assets/cake12.jpg','/assets/cake7.jpg','/assets/cake8.jpg',],   //画像を呼び込むにはこの記述しかない
+		interval: 10000,
+		loop: true,
+		shuffle: true,
+		effect: "fade", // fade,blind,clip,slide,drop,hide
+		duration: 5000,
+		easing: "swing" // linear,swing
+	});
+});
+
+
+

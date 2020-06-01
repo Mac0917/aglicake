@@ -1,0 +1,76 @@
+
+<%= render "layouts/header" %>
+<div class ="wholescreen">
+<div class="container orderview">
+<div class="row-order">
+
+<div class="order-info"><strong>注文情報入力</strong></div>
+
+<%= form_with( model: @order, url: {action:'purchase'}, local: true ) do |f| %>
+
+<div class="errorsbar">
+<% if @order.errors.any? %>
+<h2><%= @order.errors.count %><strong>件エラー発生 こちらの注文は以下の理由により確定できませんでした。</strong></h2>
+<%= @order.errors.full_messages.each do |msg|%><br>
+<%= msg %>
+<% end %>
+<% end %>
+</div>
+
+<div class="payment_title">
+<h3><strong>支払方法</strong></h3></div>
+<div class="payment2">
+<%= f.radio_button :payment_methods, 'credit' %>
+<%= f.label :payment_methods, 'クレジットカード', value: 'credit' %><br>
+<%= f.radio_button :payment_methods, 'bank' %>
+<%= f.label :payment_methods, '銀行振込', value: 'bank' %>
+
+</div>
+
+<div class="delivery_address">
+<div class=delivery_address_title>
+<h3><strong>お届け先</strong></h3></div>
+<div class="address_field">
+<%= f.radio_button :delivery_select, '2' %>
+<%= f.label :delivery_select, 'ご自身の住所', value: 2 %><br>
+<%=current_member.post_number%>　<%=current_member.address%><br>
+<%=current_member.last_name%>　<%=current_member.first_name%>
+</div>
+
+<div class="address_field"><br>
+<%= f.radio_button :delivery_select, '3' %>
+<%= f.label :delivery_select, '登録済住所から選択', value: 3 %><br>
+<%= f.collection_select(:register_address, current_member.shipping_addresses, :id, :view_name) %><br>
+</div><br>
+  
+<div class="address_field"><br>
+<%= f.radio_button :delivery_select, '4' %>
+<%= f.label :delivery_select, '新しいお届け先', value: 4 %>
+<br>
+<%= f.label :郵便番号（ハイフンなし）%><br>
+<%= f.text_field :post_number, autofocus: true, size:"25:20" %><br>  
+<%= f.label :住所 %><br>
+<%= f.text_field :delivery_address, autofocus: true, size:"55:20" %><br>
+<%= f.label :宛名 %><br>
+<%= f.text_field :delivery_name, autofocus: true, class: "delivery_name", size:"25:20" %><br>
+</div>
+
+<div class="submitbtn"><br>
+<%= f.submit '確定画面に進む',class: "btn btn-primary "%>
+</div>
+
+<% end %>
+
+</div>
+</div>
+</div>
+<footer >
+          <div id="footer">
+            <p class="footer-text">店舗情報</p>
+            <p class="footer-text">Aglicake</p>
+            <p class="footer-text">〒000-00000 東京都 TEL：000-0000-0000</p>
+            <p class="footer-text">平日 11:00～19:00／土日祝日 9:00～19:00 月曜定休（月曜祝日の場合は翌日休み)</p>
+            <p class="footer-text">こちらのサイトからのご注文は24時間受け付けております</p>
+           </div>
+      </footer>
+

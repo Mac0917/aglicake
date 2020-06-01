@@ -1,0 +1,22 @@
+<%= render "layouts/header" %>
+
+
+<div class='container'>
+  <h2>ジャンル編集</h2><br />
+  <div class='col-md-6'>
+    <%= form_for :genre, url: admins_genre_path(@genre), method: :patch do |f| %>
+    <div class="field row">
+      <div class="form-inline">
+        <label for="item_title">ジャンル</label>
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.radio_button :status, :有効, checked: "checked" %>
+        <%= f.label :有効, class: "genre_status_label" %>
+        <%= f.radio_button :status, :無効 %>
+        <%= f.label :無効, class: "genre_status_label" %>
+        <%= f.submit '更新を保存する', class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

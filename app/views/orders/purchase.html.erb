@@ -1,0 +1,93 @@
+
+       <%= render "layouts/header" %>
+       <div class ="wholescreen">
+       <div class="container">
+       <div class="row-order">
+
+       <div class="order-info">
+       <h1><strong>注文情報確認</strong></h1>
+       </div>
+
+        <div class=whole_info>
+        <div class='col-lg-5 col-md-offset-2'>
+        <table class="table">
+        <thead>
+        <tr>
+        <h4><th>商品写真</th></h4>
+        <h4><th>商品名</th></h4>
+        <h4><th>単価(税込)</th></h4>
+        <h4><th>数量</th></h4>
+        <h4><th>小計</th></h4>
+        </tr>
+        </thead>
+        <div class="order-detail-1">
+         <tbody>
+         <% price_all = 0 %>
+         <% @cartitems.each do |cartitem| %>
+         <% item = Item.find(cartitem.item_id) %>
+         <tr>
+         <th><%= attachment_image_tag item,:item_image, format: 'jpeg', fallback: "no_image.jpg", size: "80x70" %></th>
+         <th><h4><strong><%=cartitem.item.name%></strong></h4></th>
+         <th><h4><strong><%=(BigDecimal(cartitem.item.excluded) * BigDecimal("1.1")).floor %>円</strong></h4></th>
+         <th><h4><strong><%=cartitem.quantity%></strong></h4></th>
+         <th><h4><strong><%= ((cartitem.quantity * cartitem.item.excluded) * 1.1).floor  %></strong></h4></th>
+         </tr>
+         <% end %>
+         </tbody>
+         </table>
+         </div>
+
+         <div class="order-detail">
+         <table >
+         <tbody>
+         <tr>
+         <th><h4>送料　¥<%= session[:order][:delivery_price] %></h4></th>
+         </tr>
+         <tr>
+         <th><h4>商品合計　¥<%= @sum %></h4></th>
+         </tr>
+         <tr>
+         <th><h3><strong>請求金額　¥<%= session[:order][:total_price] %></strong></h3></th>
+         </tr>
+         </tbody>
+         </table>
+         </div>
+         </div>
+         </div>
+
+          <div class="payment"><br>
+          <table class="table">
+           <tr>
+          <td><h3><strong>支払方法</strong></h3><td>
+          </tr>
+          <tr>
+          <td><h3><%= session[:order][:payment_methods] %></h3></td>
+          </tr>
+          </table>
+          </div>
+          <div class="address"><br>
+          <table class="table">
+          <tr>
+          <th><h3><strong>お届け先</strong></h3></th>
+          </tr>
+          <tr>
+          <td><h3><%= session[:order][:post_number] %>　<%= session[:order][:delivery_address] %>　<%=session[:order][:delivery_name]%></h3></td>
+          </tr>
+          </table>
+          </div>
+
+          <div class="actions"><br>
+          <%= link_to '購入を確定する',orders_path,class: "btn btn-danger col-xs-3 col-xs-offset-4 action", style: 'color:#FFFFFF;', method: :post %>
+          </div>
+          </div>
+          </div>
+          </div>
+  <footer >
+          <div id="footer">
+            <p class="footer-text">店舗情報</p>
+            <p class="footer-text">Aglicake</p>
+            <p class="footer-text">〒000-00000 東京都 TEL：000-0000-0000</p>
+            <p class="footer-text">平日 11:00～19:00／土日祝日 9:00～19:00 月曜定休（月曜祝日の場合は翌日休み)</p>
+            <p class="footer-text">こちらのサイトからのご注文は24時間受け付けております</p>
+           </div>
+      </footer>      

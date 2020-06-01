@@ -1,0 +1,33 @@
+<div class = "back" >
+  <%= render "layouts/header" %>
+  <div class="container">
+
+  <h2 class="new_members">管理者サインアップ</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "admins/shared/error_messages", member: resource %>
+    <table>
+      <tbody>
+        <tr>
+          <th width="150" height="50"><%= f.label :メールアドレス %></th>
+          <td><%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", size: "40" %>
+        </tr>
+        <tr>
+          <th height="50"><%= f.label :パスワード %></th>
+          <td><%= f.password_field :password, class: "form-control", autocomplete: "new-password" %></td>
+        </tr>
+        <tr>
+          <th height="50"><%= f.label :パスワード %>(確認用)</th>
+          <td><%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td></td>
+          <td> <%= f.submit "登録", class: "btn btn-success reg_btn" %>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+  <%= link_to "ログインへ", new_session_path(resource_name), class: "link_new" %>
+
+  </div>
+</div>

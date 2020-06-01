@@ -1,0 +1,70 @@
+<div class="back" >
+<%= render "layouts/header" %>
+<div class='container'>
+
+	<div class='container'>
+
+
+
+		<div class='row'>
+			<div class='col-md-3'>
+       <div class="top-text box15">
+            <table class='table'>
+              
+            <tr><h2>ジャンル検索</h2></tr>
+            <% @genres.each do |a| %>
+
+
+
+            <tr><td><%= link_to a.name , items_path(genre_id: a.id) %></td></tr>
+           
+            <% end %>
+            </table>
+            </div>
+        </div>
+
+			<div class='col-md-7'>
+
+				<%= notice %>
+				<!-- form_for部分 -->
+				<%= form_for @cart, url:carts_path, method: :post do |f| %>
+				<div class="item">
+				   <%= attachment_image_tag @item, :item_image,format: 'jpeg', fallback: "no_image.jpg", size: "300x300" %>
+				</div>
+
+				<br>
+				 <h2><%= @item.name %></h2>
+				 <br>
+
+				  <%= @item.explanation %>
+				<br>
+
+				<div class='item-show-price'>
+				<font size="5">¥<%=  (BigDecimal(@item.excluded) * BigDecimal("1.1")).floor %></font>(税込)
+				</div>
+			</div>
+		</div>
+		<div class='col-md-8 '>
+		</div>
+		<div class='col-md-2 '>
+		<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[8,8],[9,9],[10,10]] %>
+		    <%= f.hidden_field :item_id, :value => @item.id %>
+
+		<%= f.submit 'カートに入れる',class: 'btn btn-primary btn-sm' %>
+		<% end %>
+		</div>
+
+	</div>
+
+</div>
+</div>
+</div>
+<footer >
+          <div id="footer">
+            <p class="footer-text">店舗情報</p>
+            <p class="footer-text">Aglicake</p>
+            <p class="footer-text">〒000-00000 東京都 TEL：000-0000-0000</p>
+            <p class="footer-text">平日 11:00～19:00／土日祝日 9:00～19:00 月曜定休（月曜祝日の場合は翌日休み)</p>
+            <p class="footer-text">こちらのサイトからのご注文は24時間受け付けております</p>
+           </div>
+      </footer>

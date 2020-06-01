@@ -4,16 +4,25 @@
     <title>Aglicake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!--application.jsを読んでいる-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script><!--//はweb上のファイルを呼び込んでいる-->
   </head>
-
   <body>
-    <h1>world</h1>
-
-   
-
-    <%= yield %>
+          <div class="flash_message">
+            <% if flash[:notice] %>
+                <p><%= flash[:notice] %></p>
+            <%end%>
+            <% if alert %>
+                <p><%= alert %></p>
+            <%end%>
+        </div>
+        
+     <%= link_to root_path do %>
+                <%= image_tag 'logo.png', class: "logo" %>
+            <% end %>
+     <%= yield %>
+      
   </body>
 </html>

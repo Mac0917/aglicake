@@ -1,0 +1,66 @@
+<div class="back">
+<%= render 'layouts/header' %>
+
+<div class="container">
+<div class="col-md-9">
+<table class="table admingawa-member table-hover">
+  <tbody class='senkeshi'>
+  <h2><%=@members.last_name%><%=@member.first_name%>さんの会員情報編集</h2>
+  <%= render "layouts/error_messages", member: @member %>
+  <%= form_for(@member, url: admins_member_path(@member.id))do |f| %>
+  <tr>
+    <th>顧客ID</th>
+    <td><%=@member.id%></td>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :氏名%><br /></th>
+      <td><%= f.text_field :last_name %></td>
+      <td><%= f.text_field :first_name %></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :フリガナ %><br /></th>
+      <td><%= f.text_field :last_name_kana %></td>
+      <td><%= f.text_field :first_name_kana %></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :メールアドレス %><br /></th>
+      <td><%= f.email_field :email %></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :郵便番号 %><br /></th>
+      <td><%= f.text_field :post_number %></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :住所 %><br /></th>
+      <td><%= f.text_field :address %></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="field">
+      <th><%= f.label :電話番号 %><br /></th>
+      <td><%= f.text_field :phone_number%></td>
+    </div>
+  </tr>
+  <tr>
+    <th>会員ステータス</th>
+    <td><label><%=f.radio_button :status, "有効会員"%>有効会員</label></td>
+    <td><label><%=f.radio_button :status, "無効会員"%>無効会員</label></td>
+  </tr>
+  <tr><br />
+      <td><p><%= f.submit "変更を保存する", class: 'btn btn-primary btn-sm', style: 'color:#FFFFFF;' %></p></td>
+  </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

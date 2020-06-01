@@ -1,0 +1,10 @@
+<% if member.errors.any? %>
+    <div class="alert">
+      <h2><%= pluralize(member.errors.count, "件") %>のエラーにより配送先情報を保存できませんでした。</h2>
+      <ul class="error" type="disc">
+        <% member.errors.full_messages.each do |message| %>
+          <li class="error_message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
