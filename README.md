@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+チーム開発で作成したaglicake(架空のケーキ屋)というケーキ屋さんのECサイトです。<br>
 
-Things you may want to cover:
+## バージョン
+ruby・・・2.5.7<br>
+rails・・・5.2.4.4<br>
+nginx・・・1.19.3<br>
+mysql・・・5.7
 
-* Ruby version
+## ローカル環境での実行手順
+dockerとdocker-composeを自分のpcにインストール
 
-* System dependencies
+好きなディレクトリで<br>
+`git clone https://github.com/Mac0917/aglicake.git`
 
-* Configuration
+移動<br>
+`cd aglicake`
 
-* Database creation
+docker-composeを実行<br>
+`docker-compose up -d`
 
-* Database initialization
+データベース作成<br>
+`docker exec -it bookers2-advance_app_1 bash`<br>
+`rails db:create`<br>
+`rails db:migrate`
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+アクセス<br>
+http://localhost/
