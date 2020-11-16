@@ -1,5 +1,3 @@
-# README
-
 ## 概要
 チーム開発で作成したaglicake(架空のケーキ屋)というケーキ屋さんのECサイトです。<br>
 
@@ -22,9 +20,16 @@ docker-composeを実行<br>
 `docker-compose up -d`
 
 データベース作成<br>
-`docker exec -it bookers2-advance_app_1 bash`<br>
+`docker exec -it bookers2-advance_app_1 bash`(コンテナに入る)<br>
 `rails db:create`<br>
 `rails db:migrate`
 
 アクセス<br>
 http://localhost/
+
+終了<br>
+`exit`(コンテナから出る)
+`docker-compose stop`
+`docker-compose rm`
+`docker rmi bookers2-advance_app bookers2-advance_web`
+
