@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_143906) do
+ActiveRecord::Schema.define(version: 2020_05_21_114548) do
 
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "carts", force: :cascade do |t|
+  create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "member_id"
     t.integer "item_id"
     t.integer "quantity"
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.boolean "status", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "installs", force: :cascade do |t|
+  create_table "installs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "genre_id"
     t.string "name"
     t.string "item_image_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "members", force: :cascade do |t|
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "order_id"
     t.integer "item_id"
     t.integer "status", default: 0
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "member_id"
     t.string "delivery_address"
     t.string "delivery_price"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_143906) do
     t.string "post_number"
   end
 
-  create_table "shipping_addresses", force: :cascade do |t|
+  create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "member_id"
