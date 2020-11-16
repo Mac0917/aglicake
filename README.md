@@ -28,8 +28,8 @@ docker-composeを実行<br>
 http://localhost/
 
 終了<br>
-`exit`(コンテナから出る)
-`docker-compose stop`
-`docker-compose rm`
+`exit`(コンテナから出る)<br>
+`docker-compose stop`<br>
+`docker-compose rm`<br>
 `docker rmi bookers2-advance_app bookers2-advance_web`
 
