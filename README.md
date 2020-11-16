@@ -32,4 +32,5 @@ http://localhost/
 `docker-compose stop`<br>
 `docker-compose rm`<br>
 `docker rmi bookers2-advance_app bookers2-advance_web`
+`docker volume rm aglicake_db-data aglicake_public-data aglicake_tmp-data`
 
