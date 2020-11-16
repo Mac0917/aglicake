@@ -34,3 +34,7 @@ http://localhost/
 `docker rmi aglicake-advance_app aglicake-advance_web`<br>
 `docker volume rm aglicake_db-data aglicake_public-data aglicake_tmp-data`
 
+リポジトリを削除<br>
+`cd ..`<br>
+`rm -rf aglicake`
+
