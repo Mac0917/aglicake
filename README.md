@@ -20,7 +20,7 @@ docker-composeを実行<br>
 `docker-compose up -d`
 
 データベース作成<br>
-`docker exec -it bookers2-advance_app_1 bash`(コンテナに入る)<br>
+`docker exec -it aglicake_app_1 bash`(コンテナに入る)<br>
 `rails db:create`<br>
 `rails db:migrate`
 
